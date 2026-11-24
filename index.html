@@ -1,0 +1,3322 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consultoria e Serviços Especializados | Atendimento Personalizado</title>
+    <meta
+      name="description"
+      content="Atendimento profissional personalizado com foco em clareza, qualidade técnica e acompanhamento direto do primeiro contato ao resultado."
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Redes Sociais -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Atendimento Especializado" />
+    <meta property="og:title" content="Consultoria e Serviços Especializados | Atendimento Personalizado" />
+    <meta
+      property="og:description"
+      content="Atendimento profissional personalizado com foco em clareza, qualidade técnica e acompanhamento direto."
+    />
+
+    <!-- Twitter / X Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Consultoria e Serviços Especializados | Atendimento Personalizado" />
+    <meta
+      name="twitter:description"
+      content="Atendimento profissional personalizado com foco em clareza, qualidade técnica e acompanhamento direto."
+    />
+
+    <!-- Dados Estruturados Schema.org -->
+    <script type="application/ld+json" id="schema-jsonld">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Atendimento Especializado",
+        "description": "Atendimento profissional personalizado com foco em qualidade técnica e acompanhamento direto."
+      }
+    </script>
+
+    <!-- Favicon SVG embutido (evita 404 de /favicon.ico na Vercel) -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B0C0E'/%3E%3Cpath d='M20 44V20h13c7 0 11 3.6 11 9.5 0 4.3-2.4 7.3-6.4 8.5L45 44h-6.6l-6.6-5.3H26V44h-6zm6-10h6.6c3.4 0 5.4-1.6 5.4-4.5s-2-4.5-5.4-4.5H26v9z' fill='%23C9A96E'/%3E%3C/svg%3E"
+    />
+
+    <!-- Google Fonts: Tipografia Editorial Serifada + Sans Limpa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      /* =====================================================================
+         VARIÁVEIS DE DESIGN (Atualizadas dinamicamente a partir de CONFIG)
+         ===================================================================== */
+      :root {
+        --bg-primary: #0b0c0e;
+        --bg-surface: color-mix(in srgb, var(--bg-primary) 94%, #ffffff);
+        --bg-surface-elevated: color-mix(in srgb, var(--bg-primary) 89%, #ffffff);
+        --accent: #c9a96e;
+        --accent-hover: color-mix(in srgb, var(--accent) 84%, #ffffff);
+        --accent-ink: #0b0c0e;
+        --text-primary: #f4f1ea;
+        --text-secondary: #b2ada3;
+        --text-muted: #847f76;
+        --border-subtle: rgba(244, 241, 234, 0.09);
+        --border-strong: rgba(244, 241, 234, 0.18);
+        --font-display: 'Cormorant Garamond', Georgia, serif;
+        --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        --container-max: 1200px;
+        --radius-sm: 4px;
+        --radius-md: 8px;
+      }
+
+      /* =====================================================================
+         RESET & BASE
+         ===================================================================== */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html {
+        scroll-behavior: smooth;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        font-family: var(--font-body);
+        font-size: 16px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        overflow-x: hidden;
+        letter-spacing: 0.008em;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+        color: inherit;
+      }
+
+      button {
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+
+      /* Utilitários Tipográficos & Layout */
+      .container {
+        width: 100%;
+        max-width: var(--container-max);
+        margin-inline: auto;
+        padding-inline: 1.25rem;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          padding-inline: 2.5rem;
+        }
+      }
+
+      .section {
+        padding-block: 5rem;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      @media (min-width: 1024px) {
+        .section {
+          padding-block: 7rem;
+        }
+      }
+
+      .section-surface {
+        background-color: var(--bg-surface);
+      }
+
+      .kicker {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        color: var(--accent);
+        margin-bottom: 0.875rem;
+      }
+
+      .display-heading {
+        font-family: var(--font-display);
+        font-weight: 500;
+        line-height: 1.12;
+        letter-spacing: -0.015em;
+        color: var(--text-primary);
+        text-wrap: balance;
+      }
+
+      .section-title {
+        font-size: clamp(2rem, 3.4vw, 3rem);
+        max-width: 22ch;
+      }
+
+      .section-header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin-bottom: 3rem;
+      }
+
+      @media (min-width: 900px) {
+        .section-header-split {
+          flex-direction: row;
+          align-items: flex-end;
+          justify-content: space-between;
+          gap: 2.5rem;
+        }
+      }
+
+      .section-lead {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        max-width: 52ch;
+        line-height: 1.65;
+      }
+
+      .tabular {
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Botões */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.625rem;
+        min-height: 44px;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: background-color 180ms var(--ease-out-expo),
+          border-color 180ms var(--ease-out-expo),
+          color 180ms var(--ease-out-expo),
+          transform 180ms var(--ease-out-expo);
+      }
+
+      .btn:active {
+        transform: translateY(1px);
+      }
+
+      .btn-primary {
+        background-color: var(--accent);
+        color: var(--accent-ink);
+        border: 1px solid var(--accent);
+      }
+
+      .btn-primary:hover {
+        background-color: var(--accent-hover);
+        border-color: var(--accent-hover);
+      }
+
+      .btn-outline {
+        background-color: transparent;
+        color: var(--text-primary);
+        border: 1px solid var(--border-strong);
+      }
+
+      .btn-outline:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+      }
+
+      .btn-ghost {
+        background-color: rgba(244, 241, 234, 0.06);
+        color: var(--text-primary);
+        border: 1px solid var(--border-subtle);
+      }
+
+      .btn-ghost:hover {
+        background-color: rgba(244, 241, 234, 0.11);
+        border-color: var(--border-strong);
+      }
+
+      /* =====================================================================
+         1. HEADER FIXO (3 Zonas Limpas)
+         ===================================================================== */
+      .site-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 50;
+        height: 68px;
+        display: flex;
+        align-items: center;
+        transition: background-color 220ms var(--ease-out-expo),
+          border-color 220ms var(--ease-out-expo);
+        border-bottom: 1px solid transparent;
+      }
+
+      .site-header.is-scrolled {
+        background-color: color-mix(in srgb, var(--bg-primary) 88%, transparent);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom-color: var(--border-subtle);
+      }
+
+      .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .brand-wordmark {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 500;
+        letter-spacing: 0.01em;
+        color: var(--text-primary);
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: none;
+        align-items: center;
+        gap: 2rem;
+      }
+
+      @media (min-width: 960px) {
+        .nav-links {
+          display: flex;
+        }
+      }
+
+      .nav-link {
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--text-secondary);
+        white-space: nowrap;
+        flex-shrink: 0;
+        position: relative;
+        padding-block: 0.25rem;
+        transition: color 160ms ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 1px;
+        background-color: var(--accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 200ms var(--ease-out-expo);
+      }
+
+      .nav-link:hover {
+        color: var(--text-primary);
+      }
+
+      .nav-link:hover::after {
+        transform: scaleX(1);
+      }
+
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-shrink: 0;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      @media (min-width: 640px) {
+        .header-cta {
+          display: inline-flex;
+          min-height: 40px;
+          padding: 0.5rem 1.125rem;
+          font-size: 0.8125rem;
+        }
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        color: var(--text-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+      }
+
+      @media (min-width: 960px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      /* Drawer Mobile */
+      .mobile-nav {
+        position: fixed;
+        inset: 68px 0 0 0;
+        z-index: 49;
+        background-color: color-mix(in srgb, var(--bg-primary) 97%, transparent);
+        backdrop-filter: blur(16px);
+        padding: 2rem 1.25rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition: opacity 200ms var(--ease-out-expo),
+          transform 200ms var(--ease-out-expo);
+      }
+
+      .mobile-nav.is-open {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+      }
+
+      .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        list-style: none;
+      }
+
+      .mobile-nav-link {
+        display: block;
+        padding-block: 0.875rem;
+        font-family: var(--font-display);
+        font-size: 1.75rem;
+        border-bottom: 1px solid var(--border-subtle);
+        color: var(--text-primary);
+      }
+
+      /* =====================================================================
+         2. HERO EM TELA CHEIA
+         ===================================================================== */
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        align-items: flex-end;
+        padding-top: 6.5rem;
+        padding-bottom: 4rem;
+        overflow: hidden;
+      }
+
+      @media (min-width: 1024px) {
+        .hero {
+          padding-bottom: 5.5rem;
+        }
+      }
+
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
+
+      .hero-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+
+      /* Scrim medido para contraste WCAG AA >= 4.5:1 usando --bg-primary */
+      .hero-scrim {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            180deg,
+            color-mix(in srgb, var(--bg-primary) 72%, transparent) 0%,
+            color-mix(in srgb, var(--bg-primary) 44%, transparent) 42%,
+            color-mix(in srgb, var(--bg-primary) 90%, transparent) 84%,
+            color-mix(in srgb, var(--bg-primary) 98%, transparent) 100%
+          ),
+          linear-gradient(
+            90deg,
+            color-mix(in srgb, var(--bg-primary) 78%, transparent) 0%,
+            color-mix(in srgb, var(--bg-primary) 20%, transparent) 68%
+          );
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+      }
+
+      .hero-inner {
+        max-width: 780px;
+      }
+
+      .hero-kicker {
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: var(--accent);
+        margin-bottom: 1.25rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.35rem, 4.5vw, 4.1rem);
+        line-height: 1.08;
+        margin-bottom: 1.5rem;
+        max-width: 19ch;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 1.35vw, 1.15rem);
+        color: #dedad2;
+        max-width: 56ch;
+        line-height: 1.65;
+        margin-bottom: 2.25rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+
+      /* =====================================================================
+         3. NÚMEROS DE CREDIBILIDADE
+         ===================================================================== */
+      .metrics-band {
+        background-color: var(--bg-surface);
+        border-top: 1px solid var(--border-subtle);
+        padding-block: 3.5rem;
+      }
+
+      .metrics-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media (min-width: 768px) {
+        .metrics-grid {
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0;
+        }
+      }
+
+      .metric-item {
+        display: flex;
+        flex-direction: column;
+        gap: 0.375rem;
+      }
+
+      @media (min-width: 768px) {
+        .metric-item {
+          padding-inline: 2.5rem;
+          border-left: 1px solid var(--border-subtle);
+        }
+
+        .metric-item:first-child {
+          padding-left: 0;
+          border-left: none;
+        }
+      }
+
+      .metric-value {
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        font-weight: 500;
+        line-height: 1;
+        color: var(--accent);
+      }
+
+      .metric-label {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-top: 0.25rem;
+      }
+
+      .metric-context {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+      }
+
+      /* =====================================================================
+         4. SERVIÇOS / PRODUTOS EM DESTAQUE
+         ===================================================================== */
+      .filter-bar {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 2.25rem;
+      }
+
+      .filter-btn {
+        min-height: 40px;
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-sm);
+        border: 1px solid var(--border-subtle);
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        white-space: nowrap;
+        flex-shrink: 0;
+        transition: border-color 160ms ease, color 160ms ease, background-color 160ms ease;
+      }
+
+      .filter-btn:hover {
+        border-color: var(--border-strong);
+        color: var(--text-primary);
+      }
+
+      .filter-btn.is-active {
+        background-color: var(--accent);
+        border-color: var(--accent);
+        color: var(--accent-ink);
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media (min-width: 680px) {
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1080px) {
+        .services-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .service-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: border-color 220ms var(--ease-out-expo),
+          transform 220ms var(--ease-out-expo);
+      }
+
+      .service-card:hover {
+        border-color: var(--border-strong);
+        transform: translateY(-3px);
+      }
+
+      .service-media {
+        position: relative;
+        aspect-ratio: 4 / 3;
+        background-color: var(--bg-surface-elevated);
+        overflow: hidden;
+      }
+
+      .service-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 420ms var(--ease-out-expo);
+      }
+
+      .service-card:hover .service-media img {
+        transform: scale(1.04);
+      }
+
+      .image-fallback {
+        position: absolute;
+        inset: 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.75rem;
+        padding: 1.5rem;
+        text-align: center;
+        background: radial-gradient(circle at top right, rgba(201, 169, 110, 0.12), transparent 60%),
+          var(--bg-surface-elevated);
+        color: var(--text-secondary);
+      }
+
+      .image-fallback.is-visible {
+        display: flex;
+      }
+
+      .service-body {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        gap: 0.75rem;
+      }
+
+      .service-category {
+        font-size: 0.8125rem;
+        color: var(--accent);
+        font-weight: 500;
+        letter-spacing: 0.03em;
+      }
+
+      .service-title {
+        font-family: var(--font-display);
+        font-size: 1.55rem;
+        font-weight: 500;
+        line-height: 1.2;
+        color: var(--text-primary);
+      }
+
+      .service-desc {
+        font-size: 0.9125rem;
+        color: var(--text-secondary);
+        line-height: 1.62;
+      }
+
+      .service-footer {
+        margin-top: auto;
+        padding-top: 1.125rem;
+        border-top: 1px solid var(--border-subtle);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .service-footer.no-price {
+        justify-content: flex-start;
+      }
+
+      .service-price {
+        font-family: var(--font-display);
+        font-size: 1.4rem;
+        font-weight: 500;
+        color: var(--text-primary);
+      }
+
+      .service-cta {
+        min-height: 40px;
+        padding: 0.5rem 1rem;
+        font-size: 0.8125rem;
+      }
+
+      /* =====================================================================
+         5. SOBRE O PROFISSIONAL / EMPRESA
+         ===================================================================== */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: stretch;
+      }
+
+      @media (min-width: 960px) {
+        .about-grid {
+          grid-template-columns: 5fr 7fr;
+          gap: 4.5rem;
+        }
+      }
+
+      .about-portrait-wrap {
+        position: relative;
+        aspect-ratio: 3 / 4;
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        border: 1px solid var(--border-subtle);
+        background-color: var(--bg-surface-elevated);
+      }
+
+      @media (min-width: 960px) {
+        .about-portrait-wrap {
+          aspect-ratio: auto;
+          min-height: 540px;
+          height: 100%;
+        }
+      }
+
+      .about-portrait-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+      }
+
+      .about-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .about-prose {
+        display: flex;
+        flex-direction: column;
+        gap: 1.125rem;
+        margin-top: 1.75rem;
+        margin-bottom: 2.5rem;
+        color: var(--text-secondary);
+        max-width: 62ch;
+        line-height: 1.72;
+      }
+
+      .differentials-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+        border-top: 1px solid var(--border-subtle);
+        padding-top: 2rem;
+      }
+
+      @media (min-width: 640px) {
+        .differentials-list {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.5rem 2.5rem;
+        }
+      }
+
+      .differential-item-title {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 0.35rem;
+      }
+
+      .differential-item-text {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.6;
+      }
+
+      /* =====================================================================
+         6. COMO FUNCIONA O ATENDIMENTO (4 Etapas)
+         ===================================================================== */
+      .steps-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      @media (min-width: 768px) {
+        .steps-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (min-width: 1080px) {
+        .steps-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      .step-card {
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+      }
+
+      @media (min-width: 768px) {
+        .step-card {
+          padding: 2.25rem 2rem 2.25rem 0;
+          border-right: 1px solid var(--border-subtle);
+          padding-left: 2rem;
+        }
+
+        .step-card:nth-child(2n + 1) {
+          padding-left: 0;
+        }
+
+        .step-card:nth-child(2n) {
+          border-right: none;
+        }
+      }
+
+      @media (min-width: 1080px) {
+        .step-card {
+          padding: 2.25rem 2rem;
+          border-bottom: none;
+          border-right: 1px solid var(--border-subtle);
+        }
+
+        .step-card:first-child {
+          padding-left: 0;
+        }
+
+        .step-card:nth-child(2n) {
+          border-right: 1px solid var(--border-subtle);
+        }
+
+        .step-card:last-child {
+          padding-right: 0;
+          border-right: none;
+        }
+      }
+
+      .step-num {
+        font-family: var(--font-display);
+        font-size: 2.125rem;
+        font-weight: 500;
+        color: var(--accent);
+        line-height: 1;
+      }
+
+      .step-title {
+        font-size: 1.0625rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        line-height: 1.35;
+      }
+
+      .step-desc {
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        line-height: 1.65;
+      }
+
+      /* =====================================================================
+         7. DEPOIMENTOS DE CLIENTES
+         ===================================================================== */
+      .testimonials-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      @media (min-width: 900px) {
+        .testimonials-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      .testimonial-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1.75rem;
+      }
+
+      .testimonial-quote {
+        font-family: var(--font-display);
+        font-size: 1.3125rem;
+        line-height: 1.5;
+        color: var(--text-primary);
+        font-weight: 400;
+      }
+
+      .testimonial-author {
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .testimonial-name {
+        font-size: 0.9375rem;
+        font-weight: 500;
+        color: var(--text-primary);
+      }
+
+      .testimonial-meta {
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+        margin-top: 0.2rem;
+      }
+
+      /* =====================================================================
+         8. PERGUNTAS FREQUENTES (Acordeão)
+         ===================================================================== */
+      .faq-layout {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      @media (min-width: 960px) {
+        .faq-layout {
+          grid-template-columns: 4fr 8fr;
+          gap: 4.5rem;
+        }
+      }
+
+      .faq-list {
+        border-top: 1px solid var(--border-subtle);
+      }
+
+      .faq-item {
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      .faq-trigger {
+        width: 100%;
+        min-height: 56px;
+        padding-block: 1.375rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        text-align: left;
+        font-size: 1.0625rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        transition: color 160ms ease;
+      }
+
+      .faq-trigger:hover {
+        color: var(--accent);
+      }
+
+      .faq-icon {
+        width: 20px;
+        height: 20px;
+        flex-shrink: 0;
+        color: var(--accent);
+        transition: transform 220ms var(--ease-out-expo);
+      }
+
+      .faq-trigger[aria-expanded='true'] .faq-icon {
+        transform: rotate(45deg);
+      }
+
+      .faq-panel {
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 240ms var(--ease-out-expo);
+      }
+
+      .faq-panel.is-open {
+        grid-template-rows: 1fr;
+      }
+
+      .faq-panel-inner {
+        overflow: hidden;
+      }
+
+      .faq-answer {
+        padding-bottom: 1.5rem;
+        color: var(--text-secondary);
+        font-size: 0.9375rem;
+        line-height: 1.7;
+        max-width: 65ch;
+      }
+
+      /* =====================================================================
+         9. CHAMADA FINAL & FORMULÁRIO WHATSAPP
+         ===================================================================== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 3rem;
+        align-items: start;
+      }
+
+      @media (min-width: 960px) {
+        .contact-grid {
+          grid-template-columns: 5fr 7fr;
+          gap: 4.5rem;
+        }
+      }
+
+      .contact-direct {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border-subtle);
+        display: flex;
+        flex-direction: column;
+        gap: 0.875rem;
+        font-size: 0.9375rem;
+        color: var(--text-secondary);
+      }
+
+      .contact-direct-link {
+        color: var(--text-primary);
+        transition: color 160ms ease;
+      }
+
+      .contact-direct-link:hover {
+        color: var(--accent);
+      }
+
+      .contact-form-card {
+        background-color: var(--bg-surface-elevated);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-md);
+        padding: 1.75rem;
+      }
+
+      @media (min-width: 640px) {
+        .contact-form-card {
+          padding: 2.5rem;
+        }
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+      }
+
+      @media (min-width: 640px) {
+        .form-grid-2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .field {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .field-label {
+        font-size: 0.8125rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+      }
+
+      .field-control {
+        width: 100%;
+        min-height: 46px;
+        padding: 0.75rem 0.9375rem;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-sm);
+        color: var(--text-primary);
+        font-size: 0.9375rem;
+        transition: border-color 160ms ease;
+      }
+
+      .field-control::placeholder {
+        color: var(--text-muted);
+      }
+
+      .field-control:focus {
+        outline: none;
+        border-color: var(--accent);
+      }
+
+      textarea.field-control {
+        min-height: 112px;
+        resize: vertical;
+      }
+
+      .form-feedback {
+        margin-top: 1rem;
+        padding: 0.875rem 1rem;
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        display: none;
+        align-items: flex-start;
+        gap: 0.625rem;
+      }
+
+      .form-feedback.is-error {
+        display: flex;
+        background-color: rgba(220, 82, 82, 0.1);
+        border: 1px solid rgba(220, 82, 82, 0.35);
+        color: #f3b2b2;
+      }
+
+      .form-confirmation {
+        display: none;
+        flex-direction: column;
+        gap: 1.25rem;
+      }
+
+      .form-confirmation.is-visible {
+        display: flex;
+      }
+
+      .form-confirmation-preview {
+        padding: 1rem;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+        white-space: pre-line;
+      }
+
+      /* =====================================================================
+         10. RODAPÉ
+         ===================================================================== */
+      .site-footer {
+        background-color: var(--bg-primary);
+        border-top: 1px solid var(--border-subtle);
+        padding-block: 3.5rem 5.5rem;
+      }
+
+      @media (min-width: 768px) {
+        .site-footer {
+          padding-bottom: 3.5rem;
+        }
+      }
+
+      .footer-top {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-bottom: 2.5rem;
+        border-bottom: 1px solid var(--border-subtle);
+      }
+
+      @media (min-width: 900px) {
+        .footer-top {
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: space-between;
+        }
+      }
+
+      .footer-brand {
+        font-family: var(--font-display);
+        font-size: 1.5rem;
+        font-weight: 500;
+        color: var(--text-primary);
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-meta {
+        font-size: 0.875rem;
+        color: var(--text-muted);
+      }
+
+      .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem 2rem;
+        font-size: 0.875rem;
+        color: var(--text-secondary);
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
+
+      .footer-bottom {
+        padding-top: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        font-size: 0.8125rem;
+        color: var(--text-muted);
+      }
+
+      @media (min-width: 768px) {
+        .footer-bottom {
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+
+      /* =====================================================================
+         BOTÃO FLUTUANTE WHATSAPP (Compacto, discreto, <=15% mobile sticky cap)
+         ===================================================================== */
+      .floating-whatsapp {
+        position: fixed;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        z-index: 45;
+        width: 52px;
+        height: 52px;
+        border-radius: 9999px;
+        background-color: var(--accent);
+        color: var(--accent-ink);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 180ms var(--ease-out-expo),
+          background-color 180ms var(--ease-out-expo);
+      }
+
+      .floating-whatsapp:hover {
+        transform: translateY(-2px);
+        background-color: var(--accent-hover);
+      }
+
+      /* =====================================================================
+         ANIMAÇÕES DISCRETAS DE ENTRADA AO ROLAR
+         ===================================================================== */
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 520ms var(--ease-out-expo),
+          transform 520ms var(--ease-out-expo);
+      }
+
+      .reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+          transition: none;
+        }
+
+        .service-card,
+        .service-media img,
+        .btn,
+        .floating-whatsapp {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===================================================================
+         1. HEADER FIXO
+         =================================================================== -->
+    <header class="site-header" id="site-header">
+      <div class="container header-inner">
+        <a href="#inicio" class="brand-wordmark" id="brand-wordmark"></a>
+
+        <nav class="nav-links" aria-label="Navegação principal">
+          <a href="#servicos" class="nav-link" data-nav="servicos"></a>
+          <a href="#sobre" class="nav-link" data-nav="sobre"></a>
+          <a href="#atendimento" class="nav-link" data-nav="atendimento"></a>
+          <a href="#depoimentos" class="nav-link" data-nav="depoimentos"></a>
+          <a href="#duvidas" class="nav-link" data-nav="duvidas"></a>
+        </nav>
+
+        <div class="header-actions">
+          <a
+            href="#"
+            id="header-whatsapp-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-outline header-cta"
+          ></a>
+          <button
+            type="button"
+            class="menu-toggle"
+            id="menu-toggle"
+            aria-label="Abrir menu de navegação"
+            aria-expanded="false"
+            aria-controls="mobile-nav"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <line x1="4" y1="7" x2="20" y2="7" />
+              <line x1="4" y1="12" x2="20" y2="12" />
+              <line x1="4" y1="17" x2="20" y2="17" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Menu Mobile -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <ul class="mobile-nav-list">
+        <li><a href="#servicos" class="mobile-nav-link" data-nav="servicos"></a></li>
+        <li><a href="#sobre" class="mobile-nav-link" data-nav="sobre"></a></li>
+        <li><a href="#atendimento" class="mobile-nav-link" data-nav="atendimento"></a></li>
+        <li><a href="#depoimentos" class="mobile-nav-link" data-nav="depoimentos"></a></li>
+        <li><a href="#duvidas" class="mobile-nav-link" data-nav="duvidas"></a></li>
+        <li><a href="#contato" class="mobile-nav-link" data-nav="contato"></a></li>
+      </ul>
+      <a
+        href="#"
+        id="mobile-whatsapp-btn"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn btn-primary"
+      ></a>
+    </div>
+
+    <main>
+      <!-- ===================================================================
+           2. HERO EM TELA CHEIA
+           =================================================================== -->
+      <section class="hero" id="inicio">
+        <div class="hero-media">
+          <img
+            id="hero-image"
+            alt="Ambiente de atendimento profissional acolhedor e sofisticado"
+            referrerpolicy="no-referrer"
+            onerror="this.style.display='none';"
+          />
+          <div class="hero-scrim" aria-hidden="true"></div>
+        </div>
+
+        <div class="container hero-content">
+          <div class="hero-inner">
+            <p class="hero-kicker" id="hero-kicker"></p>
+            <h1 class="display-heading hero-title" id="hero-title"></h1>
+            <p class="hero-subtitle" id="hero-subtitle"></p>
+            <div class="hero-actions">
+              <a href="#servicos" class="btn btn-primary" id="hero-cta-primary"></a>
+              <a
+                href="#"
+                id="hero-cta-whatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-ghost"
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           3. NÚMEROS DE CREDIBILIDADE
+           =================================================================== -->
+      <section class="metrics-band" id="credibilidade-section" aria-label="Indicadores de atuação">
+        <div class="container">
+          <div class="metrics-grid" id="metrics-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           4. SERVIÇOS / PRODUTOS EM DESTAQUE (Oculta se lista estiver vazia)
+           =================================================================== -->
+      <section class="section" id="servicos">
+        <div class="container">
+          <div class="section-header section-header-split reveal">
+            <div>
+              <p class="kicker" id="services-kicker"></p>
+              <h2 class="display-heading section-title" id="services-title"></h2>
+            </div>
+            <p class="section-lead" id="services-subtitle"></p>
+          </div>
+
+          <div class="filter-bar" id="service-filters" role="group" aria-label="Filtrar por categoria"></div>
+          <div class="services-grid" id="services-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           5. SOBRE O PROFISSIONAL / EMPRESA
+           =================================================================== -->
+      <section class="section section-surface" id="sobre">
+        <div class="container">
+          <div class="about-grid">
+            <div class="about-portrait-wrap reveal">
+              <img
+                id="about-image"
+                alt="Retrato do profissional em ambiente de atendimento"
+                referrerpolicy="no-referrer"
+              />
+              <div class="image-fallback" id="about-image-fallback">
+                <span class="display-heading" style="font-size: 1.5rem" id="about-fallback-profession"></span>
+                <span id="about-fallback-name"></span>
+              </div>
+            </div>
+
+            <div class="about-content reveal">
+              <p class="kicker" id="about-kicker"></p>
+              <h2 class="display-heading section-title" id="about-title"></h2>
+              <div class="about-prose" id="about-prose"></div>
+              <div class="differentials-list" id="about-differentials"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           6. COMO FUNCIONA O ATENDIMENTO (4 ETAPAS)
+           =================================================================== -->
+      <section class="section" id="atendimento">
+        <div class="container">
+          <div class="section-header section-header-split reveal">
+            <div>
+              <p class="kicker" id="steps-kicker"></p>
+              <h2 class="display-heading section-title" id="steps-title"></h2>
+            </div>
+            <p class="section-lead" id="steps-subtitle"></p>
+          </div>
+
+          <div class="steps-grid" id="steps-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           7. DEPOIMENTOS DE CLIENTES
+           =================================================================== -->
+      <section class="section section-surface" id="depoimentos">
+        <div class="container">
+          <div class="section-header section-header-split reveal">
+            <div>
+              <p class="kicker" id="testimonials-kicker"></p>
+              <h2 class="display-heading section-title" id="testimonials-title"></h2>
+            </div>
+            <p class="section-lead" id="testimonials-subtitle"></p>
+          </div>
+
+          <div class="testimonials-grid" id="testimonials-grid"></div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           8. PERGUNTAS FREQUENTES (ACORDEÃO)
+           =================================================================== -->
+      <section class="section" id="duvidas">
+        <div class="container">
+          <div class="faq-layout">
+            <div class="reveal">
+              <p class="kicker" id="faq-kicker"></p>
+              <h2 class="display-heading section-title" id="faq-title"></h2>
+              <p class="section-lead" id="faq-subtitle" style="margin-top: 1rem"></p>
+            </div>
+
+            <div class="faq-list reveal" id="faq-list"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           9. CHAMADA FINAL & FORMULÁRIO WHATSAPP
+           =================================================================== -->
+      <section class="section section-surface" id="contato">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="reveal">
+              <p class="kicker" id="contact-kicker"></p>
+              <h2 class="display-heading section-title" id="contact-title"></h2>
+              <p class="section-lead" id="contact-subtitle" style="margin-top: 1.125rem"></p>
+
+              <div class="contact-direct">
+                <div>
+                  <span style="color: var(--text-muted); display: block; font-size: 0.8125rem" id="contact-label-whatsapp"></span>
+                  <a href="#" id="contact-whatsapp-link" target="_blank" rel="noopener noreferrer" class="contact-direct-link"></a>
+                </div>
+                <div>
+                  <span style="color: var(--text-muted); display: block; font-size: 0.8125rem" id="contact-label-email"></span>
+                  <a href="#" id="contact-email-link" class="contact-direct-link"></a>
+                </div>
+                <div id="contact-registro-wrap">
+                  <span style="color: var(--text-muted); display: block; font-size: 0.8125rem" id="contact-label-registro"></span>
+                  <span id="contact-registro" style="color: var(--text-primary)"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-form-card reveal">
+              <form id="whatsapp-form" novalidate>
+                <div class="form-grid">
+                  <div class="form-grid form-grid-2">
+                    <div class="field">
+                      <label for="lead-name" class="field-label" id="form-label-name"></label>
+                      <input
+                        type="text"
+                        id="lead-name"
+                        name="name"
+                        class="field-control"
+                        required
+                      />
+                    </div>
+                    <div class="field">
+                      <label for="lead-phone" class="field-label" id="form-label-phone"></label>
+                      <input
+                        type="tel"
+                        id="lead-phone"
+                        name="phone"
+                        class="field-control"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="form-grid form-grid-2">
+                    <div class="field">
+                      <label for="lead-intent" class="field-label" id="form-label-intent"></label>
+                      <select id="lead-intent" name="intent" class="field-control"></select>
+                    </div>
+                    <div class="field">
+                      <label for="lead-extra" class="field-label" id="form-label-extra"></label>
+                      <input
+                        type="text"
+                        id="lead-extra"
+                        name="extra"
+                        class="field-control"
+                      />
+                    </div>
+                  </div>
+
+                  <div class="field">
+                    <label for="lead-message" class="field-label" id="form-label-message"></label>
+                    <textarea
+                      id="lead-message"
+                      name="message"
+                      class="field-control"
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="btn btn-primary" id="form-submit-btn" style="width: 100%; margin-top: 0.25rem"></button>
+                </div>
+
+                <div class="form-feedback" id="form-error" role="alert">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0; margin-top: 2px" aria-hidden="true">
+                    <circle cx="12" cy="12" r="10" />
+                    <line x1="12" y1="8" x2="12" y2="12" />
+                    <line x1="12" y1="16" x2="12.01" y2="16" />
+                  </svg>
+                  <span id="form-error-text"></span>
+                </div>
+              </form>
+
+              <div class="form-confirmation" id="form-confirmation" aria-live="polite">
+                <div>
+                  <p class="kicker" style="margin-bottom: 0.35rem" id="form-confirm-kicker"></p>
+                  <h3 class="display-heading" style="font-size: 1.75rem" id="form-confirm-title"></h3>
+                  <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 0.35rem" id="form-confirm-subtitle"></p>
+                </div>
+                <div class="form-confirmation-preview" id="form-preview-text"></div>
+                <div style="display: flex; flex-wrap: wrap; gap: 0.75rem">
+                  <a
+                    href="#"
+                    id="form-whatsapp-launch"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="btn btn-primary"
+                  ></a>
+                  <button type="button" id="form-reset-btn" class="btn btn-outline"></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================================================================
+         10. RODAPÉ
+         =================================================================== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <div class="footer-brand" id="footer-brand"></div>
+            <p class="footer-meta" id="footer-registro"></p>
+            <p class="footer-meta" id="footer-city" style="margin-top: 0.25rem"></p>
+          </div>
+
+          <div class="footer-links">
+            <a href="#servicos" data-nav="servicos"></a>
+            <a href="#sobre" data-nav="sobre"></a>
+            <a href="#atendimento" data-nav="atendimento"></a>
+            <a href="#duvidas" data-nav="duvidas"></a>
+            <a href="#" id="footer-instagram" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="#" id="footer-email">E-mail</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p id="footer-rights"></p>
+          <p id="footer-disclaimer"></p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Botão Flutuante de WhatsApp -->
+    <a
+      href="#"
+      id="floating-whatsapp"
+      class="floating-whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Iniciar conversa pelo WhatsApp"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path
+          d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375c1.469.797 3.109 1.219 4.75 1.219 5.516 0 9.969-4.453 9.969-9.969S17.547 2 12.031 2zm5.813 14.125c-.25.703-1.438 1.344-2 1.422-.531.078-1.203.109-1.953-.125-.453-.141-1.031-.328-1.781-.656-3.125-1.344-5.156-4.516-5.313-4.719-.156-.219-1.266-1.688-1.266-3.219s.797-2.281 1.078-2.594c.281-.313.625-.391.828-.391.203 0 .406 0 .594.016.188.016.438-.078.688.531.25.609.859 2.094.938 2.25.078.156.125.344.016.547-.094.203-.156.344-.313.516-.156.188-.328.406-.469.547-.156.156-.328.328-.141.641.188.313.844 1.391 1.813 2.25 1.25 1.109 2.297 1.453 2.609 1.609.313.156.5.125.688-.094.188-.219.797-.922 1.016-1.234.219-.313.422-.266.719-.156.297.109 1.891.891 2.219 1.047.328.156.547.234.625.375.078.141.078.813-.172 1.516z"
+        />
+      </svg>
+    </a>
+
+    <script>
+      /**
+       * =========================================================================
+       * BLOCO DE CONFIGURAÇÃO EDITÁVEL (PERSONALIZE EM 5 MINUTOS)
+       * =========================================================================
+       * 1. Escolha o modelo pronto em `ACTIVE_PRESET`:
+       *    'personal' | 'advogado' | 'corretor' | 'clinica' | 'veterinaria'
+       * 2. Personalize nome, cidade, WhatsApp, cores, textos e imagens abaixo.
+       */
+      const CONFIG = {
+        // --- PRESET ATIVO (altere aqui para trocar todo o conteúdo do site) ---
+        ACTIVE_PRESET: 'clinica',
+
+        // --- Cores do Site ---
+        corPrincipal: '#0B0C0E', // Fundo escuro principal
+        corDestaque: '#C9A96E', // Tom champagne / dourado discreto
+
+        // --- Dados de Contato e Identidade (placeholders editáveis) ---
+        dadosGerais: {
+          nome: '[Seu Nome ou Marca]',
+          cidade: '[Sua Cidade — UF]',
+          whatsapp: '5500999990000', // Apenas números com DDI + DDD
+          whatsappExibicao: '(00) 99999-0000',
+          instagram: '@seuperfil',
+          instagramUrl: 'https://instagram.com/seuperfil',
+          email: 'contato@seudominio.com.br'
+        },
+
+        // --- Imagens Neutras Editáveis ---
+        // Você pode substituir qualquer caminho abaixo por URLs do Unsplash ou imagens próprias.
+        // Exemplo Unsplash: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1400&q=80'
+        imagens: {
+          hero: '/src/assets/images/neutral_hero_studio_1795479095052.jpg',
+          heroAlt: 'Ambiente profissional iluminado com mesa de madeira e arquitetura contemporânea',
+          sobre: '/src/assets/images/neutral_about_portrait_1795479097545.jpg',
+          sobreAlt: 'Retrato do profissional em espaço moderno de atendimento',
+          atendimento: '/src/assets/images/neutral_srv_consult_1795479095679.jpg',
+          espaco: '/src/assets/images/neutral_srv_lounge_1795479096052.jpg',
+          planejamento: '/src/assets/images/neutral_srv_plan_1795479095681.jpg',
+          bemEstar: '/src/assets/images/neutral_srv_wellness_1795479096579.jpg'
+        },
+
+        // --- Rótulos Globais de Seções, Menu e Botões (100% editáveis) ---
+        rotulos: {
+          nav: {
+            servicos: 'Serviços',
+            sobre: 'Sobre',
+            atendimento: 'Atendimento',
+            depoimentos: 'Depoimentos',
+            duvidas: 'Dúvidas',
+            contato: 'Contato'
+          },
+          botoes: {
+            headerWhatsapp: 'Falar no WhatsApp',
+            heroPrimario: 'Conhecer serviços',
+            heroSecundario: 'Falar no WhatsApp',
+            cardServico: 'Solicitar informações',
+            enviarFormulario: 'Preparar mensagem para WhatsApp',
+            abrirWhatsappFormulario: 'Abrir no WhatsApp',
+            editarFormulario: 'Editar informações',
+            whatsappFlutuanteAria: 'Iniciar conversa pelo WhatsApp'
+          },
+          secoes: {
+            servicos: {
+              sobretitulo: 'Especialidades e Soluções',
+              titulo: 'Serviços em destaque',
+              subtitulo:
+                'Atendimento estruturado de acordo com a sua necessidade, com clareza de escopo, prazos e acompanhamento direto.',
+              filtroTodos: 'Todos'
+            },
+            sobre: {
+              sobretitulo: 'Sobre o Atendimento'
+            },
+            atendimento: {
+              sobretitulo: 'Método de Trabalho',
+              titulo: 'Como funciona o atendimento',
+              subtitulo:
+                'Quatro etapas objetivas para você entender o processo desde o primeiro contato até o acompanhamento contínuo.'
+            },
+            depoimentos: {
+              sobretitulo: 'Experiência dos Clientes',
+              titulo: 'Relatos sobre o atendimento',
+              subtitulo:
+                'Substitua os exemplos abaixo por depoimentos reais autorizados pelos seus clientes.'
+            },
+            faq: {
+              sobretitulo: 'Esclarecimentos',
+              titulo: 'Perguntas frequentes',
+              subtitulo:
+                'Respostas diretas sobre formato de atendimento, agendamento, prazos e condições.'
+            },
+            contato: {
+              sobretitulo: 'Contato Direto',
+              labelWhatsapp: 'WhatsApp direto',
+              labelEmail: 'E-mail',
+              labelRegistro: 'Registro profissional'
+            },
+            formulario: {
+              labelNome: 'Seu nome',
+              placeholderNome: 'Como prefere ser chamado',
+              labelTelefone: 'WhatsApp',
+              placeholderTelefone: '(00) 99999-0000',
+              labelObjetivo: 'Assunto de interesse',
+              labelComplemento: 'Cidade ou preferência de horário',
+              placeholderComplemento: 'Ex.: Manhã, tarde ou atendimento online',
+              labelMensagem: 'Como posso ajudar?',
+              placeholderMensagem:
+                'Conte brevemente o que você procura ou qual é a sua dúvida principal.',
+              confirmacaoSobretitulo: 'Mensagem pronta',
+              confirmacaoTitulo: 'Atendimento pronto para iniciar',
+              confirmacaoSubtitulo:
+                'Clique abaixo para abrir a conversa no WhatsApp com seus dados já preenchidos.'
+            },
+            rodape: {
+              disclaimer: 'Atendimento mediante agendamento prévio. Informações sujeitas à confirmação.'
+            }
+          }
+        },
+
+        // --- 5 PRESETS PRONTOS POR NICHO ---
+        PRESETS: {
+          // 1. PERSONAL TRAINER
+          personal: {
+            profissao: 'Personal Trainer',
+            registroProfissional: 'CREF [000000-G/UF]',
+            whatsappMensagemPadrao:
+              'Olá! Vi seu site e gostaria de saber mais sobre a consultoria e os treinos personalizados.',
+            hero: {
+              sobretitulo: 'Personal Trainer · [Sua Cidade — UF]',
+              titulo:
+                'Personal trainer com acompanhamento que gera evolução física real e segura em [Sua Cidade].',
+              subtitulo:
+                'Treinamento individualizado para força, condicionamento, estética e qualidade de vida, com planejamento adaptado à sua rotina e objetivos.',
+              ctaPrimario: 'Ver programas de treino',
+              ctaSecundario: 'Falar no WhatsApp'
+            },
+            credibilidade: [
+              {
+                numero: 8,
+                sufixo: '+',
+                label: 'Anos de experiência prática',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 120,
+                sufixo: '+',
+                label: 'Alunos acompanhados',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 100,
+                sufixo: '%',
+                label: 'Treinos individualizados',
+                contexto: 'Protocolo ajustado à sua rotina'
+              }
+            ],
+            servicos: [
+              {
+                categoria: 'Presencial',
+                nome: 'Acompanhamento Presencial Individual',
+                descricao:
+                  'Sessões exclusivas com correção biomecânica em tempo real, ajuste de cargas e foco total na sua execução.',
+                preco: 'Sob consulta',
+                imagem: 'bemEstar'
+              },
+              {
+                categoria: 'Híbrido ou Online',
+                nome: 'Consultoria de Treino Personalizada',
+                descricao:
+                  'Periodização mensal estruturada por aplicativo, revisão de vídeos de execução e suporte semanal via WhatsApp.',
+                preco: 'A partir de R$ [Valor]',
+                imagem: 'planejamento'
+              },
+              {
+                categoria: 'Avaliação',
+                nome: 'Avaliação Física e Postural Completa',
+                descricao:
+                  'Mapeamento de mobilidade, assimetrias musculares, composição corporal e definição clara de metas por ciclo.',
+                preco: 'R$ [Valor]',
+                imagem: 'atendimento'
+              },
+              {
+                categoria: 'Especialidade',
+                nome: 'Programa de Longevidade e Reabilitação',
+                descricao:
+                  'Treinamento de baixo impacto voltado à estabilidade articular, ganho de massa magra e autonomia no dia a dia.',
+                preco: '',
+                imagem: 'espaco'
+              }
+            ],
+            sobre: {
+              titulo: 'Planejamento individual, técnica precisa e constância sem exageros.',
+              paragrafos: [
+                'Como personal trainer em [Sua Cidade], meu trabalho é transformar metas de saúde e estética em uma rotina de treinos viável, eficiente e sustentável ao longo do ano.',
+                'Cada aluno passa por avaliação inicial detalhada para respeitar histórico de lesões, nível de condicionamento e disponibilidade real de horários.',
+                'Sem planilhas genéricas: cada bloco de treino evolui de acordo com os seus resultados e feedback semanal.'
+              ],
+              diferenciais: [
+                {
+                  titulo: 'Periodização sob medida',
+                  texto: 'Ciclos planejados conforme seu ritmo de recuperação e agenda.'
+                },
+                {
+                  titulo: 'Correção técnica contínua',
+                  texto: 'Execução segura para maximizar resultados e prevenir sobrecargas.'
+                },
+                {
+                  titulo: 'Suporte direto no WhatsApp',
+                  texto: 'Ajustes rápidos diante de viagens, imprevistos ou novas metas.'
+                },
+                {
+                  titulo: 'Foco em resultados mensuráveis',
+                  texto: 'Reavaliações periódicas de força, medidas e disposição.'
+                }
+              ]
+            },
+            etapas: [
+              {
+                numero: '01',
+                titulo: 'Conversa e anamnese inicial',
+                descricao:
+                  'Entendimento do seu histórico de saúde, lesões prévias, gostos pessoais e disponibilidade semanal.'
+              },
+              {
+                numero: '02',
+                titulo: 'Avaliação física e metas',
+                descricao:
+                  'Levantamento de mobilidade, força e composição corporal para traçar objetivos realistas.'
+              },
+              {
+                numero: '03',
+                titulo: 'Plano de treino estruturado',
+                descricao:
+                  'Início das sessões presenciais ou consultoria online com orientação clara de cada movimento.'
+              },
+              {
+                numero: '04',
+                titulo: 'Ajustes e evolução contínua',
+                descricao:
+                  'Monitoramento semanal de cargas e reavaliação periódica para manter o progresso constante.'
+              }
+            ],
+            depoimentos: [
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Em quatro meses consegui manter regularidade nos treinos pela primeira vez, sem dores no joelho e com melhora visível na disposição.]',
+                autor: '[Nome do Aluno 1]',
+                contexto: 'Aluno · Treino Presencial'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. A adaptação para minha rotina de viagens fez toda a diferença para não perder o ritmo entre uma semana e outra.]',
+                autor: '[Nome do Aluno 2]',
+                contexto: 'Aluno · Consultoria Online'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Atendimento pontual, explicações claras de cada exercício e acompanhamento atento do início ao fim.]',
+                autor: '[Nome do Aluno 3]',
+                contexto: 'Aluno · Avaliação e Treino'
+              }
+            ],
+            faq: [
+              {
+                pergunta: 'Preciso já ter experiência em musculação para começar?',
+                resposta:
+                  'Não. O programa é estruturado exatamente para o seu nível atual, seja iniciante absoluto ou praticante avançado.'
+              },
+              {
+                pergunta: 'Onde acontecem os treinos presenciais?',
+                resposta:
+                  'Os atendimentos podem ser realizados em academia parceira, no condomínio do aluno ou em estúdio na região de [Sua Cidade].'
+              },
+              {
+                pergunta: 'Como funciona a consultoria à distância?',
+                resposta:
+                  'Você recebe seu treino completo com vídeos demonstrativos, orientações de carga e tem revisões semanais comigo pelo WhatsApp.'
+              },
+              {
+                pergunta: 'Qual a frequência semanal recomendada?',
+                resposta:
+                  'Adaptamos o planejamento entre 2 e 5 sessões por semana, considerando sua disponibilidade real para garantir constância.'
+              },
+              {
+                pergunta: 'Como agendar uma avaliação ou aula experimental?',
+                resposta:
+                  'Clique em qualquer botão de WhatsApp ou preencha o formulário abaixo para verificarmos a disponibilidade de horários.'
+              }
+            ],
+            contatoFinal: {
+              titulo: 'Pronto para iniciar sua rotina com acompanhamento profissional?',
+              subtitulo:
+                'Envie uma mensagem com seus objetivos e disponibilidade de horários para agendarmos sua conversa inicial.'
+            }
+          },
+
+          // 2. ADVOGADO
+          advogado: {
+            profissao: 'Advocacia Especializada',
+            registroProfissional: 'OAB/[UF] [000.000]',
+            whatsappMensagemPadrao:
+              'Olá! Gostaria de agendar uma consulta jurídica para avaliar uma demanda.',
+            hero: {
+              sobretitulo: 'Advocacia Estratégica · [Sua Cidade — UF]',
+              titulo:
+                'Advogado com atuação que oferece segurança jurídica e clareza em decisões complexas em [Sua Cidade].',
+              subtitulo:
+                'Assessoria jurídica personalizada para pessoas físicas e empresas, unindo prevenção de riscos, leitura técnica rigorosa e comunicação transparente.',
+              ctaPrimario: 'Conhecer áreas de atuação',
+              ctaSecundario: 'Agendar consulta'
+            },
+            credibilidade: [
+              {
+                numero: 10,
+                sufixo: '+',
+                label: 'Anos de prática jurídica',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 250,
+                sufixo: '+',
+                label: 'Consultas e pareceres',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 100,
+                sufixo: '%',
+                label: 'Atendimento direto pelo titular',
+                contexto: 'Comunicação clara em cada fase'
+              }
+            ],
+            servicos: [
+              {
+                categoria: 'Consultivo',
+                nome: 'Análise e Elaboração de Contratos',
+                descricao:
+                  'Revisão minuciosa de cláusulas, mitigação de passivos e redação sob medida para negócios, parcerias e patrimônio.',
+                preco: '',
+                imagem: 'planejamento'
+              },
+              {
+                categoria: 'Contencioso',
+                nome: 'Defesa e Atuação Judicial Estratégica',
+                descricao:
+                  'Condução técnica de processos com acompanhamento próximo, relatórios objetivos e foco na solução mais eficiente.',
+                preco: '',
+                imagem: 'atendimento'
+              },
+              {
+                categoria: 'Preventivo',
+                nome: 'Consultoria Jurídica Preventiva',
+                descricao:
+                  'Pareceres e orientação continuada para tomada de decisão segura antes da assinatura de acordos ou operações.',
+                preco: '',
+                imagem: 'espaco'
+              },
+              {
+                categoria: 'Mediação',
+                nome: 'Negociação e Solução Extrajudicial',
+                descricao:
+                  'Condução de acordos estruturados para resolver conflitos com agilidade, economia e preservação de relações.',
+                preco: '',
+                imagem: 'bemEstar'
+              }
+            ],
+            sobre: {
+              titulo: 'Rigor técnico, discrição e linguagem acessível em cada orientação.',
+              paragrafos: [
+                'Acredito que uma assessoria jurídica sólida deve traduzir cenários complexos em caminhos claros, permitindo que o cliente decida com tranquilidade e respaldo.',
+                'Atuo com atendimento direto, analisando documentos e particularidades de cada caso antes de propor qualquer medida judicial ou extrajudicial.',
+                'Seja na esfera preventiva ou contenciosa, cada etapa é conduzida com sigilo absoluto, prazos respeitados e transparência nos honorários.'
+              ],
+              diferenciais: [
+                {
+                  titulo: 'Comunicação sem juridiquês',
+                  texto: 'Explicações objetivas sobre riscos, cenários e alternativas reais.'
+                },
+                {
+                  titulo: 'Estratégia preventiva',
+                  texto: 'Prioridade para soluções seguras que evitem litígios prolongados.'
+                },
+                {
+                  titulo: 'Acompanhamento direto',
+                  texto: 'Contato ágil e relatórios claros sobre o andamento da demanda.'
+                },
+                {
+                  titulo: 'Sigilo profissional rigoroso',
+                  texto: 'Tratamento reservado de documentos, contratos e informações.'
+                }
+              ]
+            },
+            etapas: [
+              {
+                numero: '01',
+                titulo: 'Triagem inicial reservada',
+                descricao:
+                  'Contato inicial para compreender o contexto da demanda e verificar a documentação básica necessária.'
+              },
+              {
+                numero: '02',
+                titulo: 'Consulta e diagnóstico jurídico',
+                descricao:
+                  'Reunião presencial ou por vídeo para análise técnica dos documentos, riscos e caminhos viáveis.'
+              },
+              {
+                numero: '03',
+                titulo: 'Proposta de estratégia e honorários',
+                descricao:
+                  'Apresentação clara do plano de ação, prazos estimados e condições contratuais de atuação.'
+              },
+              {
+                numero: '04',
+                titulo: 'Execução e atualizações periódicas',
+                descricao:
+                  'Atuação técnica contínua com comunicação transparente até a conclusão do caso.'
+              }
+            ],
+            depoimentos: [
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Recebi uma análise clara do nosso contrato antes de assinar e evitamos uma cláusula que traria prejuízo relevante.]',
+                autor: '[Nome do Cliente 1]',
+                contexto: 'Cliente · Consultoria Contratual'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Sempre soube exatamente em que fase o processo estava, com explicações objetivas e retorno rápido.]',
+                autor: '[Nome do Cliente 2]',
+                contexto: 'Cliente · Atuação Estratégica'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. A condução extrajudicial resolveu em poucas semanas um impasse que parecia exigir anos de disputa.]',
+                autor: '[Nome do Cliente 3]',
+                contexto: 'Cliente · Mediação e Acordo'
+              }
+            ],
+            faq: [
+              {
+                pergunta: 'O atendimento pode ser feito de forma online?',
+                resposta:
+                  'Sim. Realizo consultas por videoconferência com a mesma qualidade do atendimento presencial, atendendo clientes em [Sua Cidade] e em todo o país.'
+              },
+              {
+                pergunta: 'Como funciona a primeira consulta jurídica?',
+                resposta:
+                  'Na consulta inicial analisamos os fatos e os documentos disponíveis para apresentar um diagnóstico técnico e os caminhos possíveis.'
+              },
+              {
+                pergunta: 'Quais documentos devo separar antes do atendimento?',
+                resposta:
+                  'Ao agendar pelo WhatsApp, envio uma lista objetiva apenas dos contratos, notificações ou comprovantes relevantes para o seu caso.'
+              },
+              {
+                pergunta: 'Como são definidos os honorários?',
+                resposta:
+                  'Os valores seguem os parâmetros éticos da OAB e a complexidade da demanda, sempre formalizados previamente em contrato transparente.'
+              },
+              {
+                pergunta: 'Em quanto tempo recebo retorno após enviar mensagem?',
+                resposta:
+                  'As solicitações recebidas em horário comercial são respondidas no mesmo dia útil para agendamento.'
+              }
+            ],
+            contatoFinal: {
+              titulo: 'Precisa de orientação jurídica clara para o seu caso?',
+              subtitulo:
+                'Entre em contato para agendar uma consulta reservada e analisar sua situação com segurança técnica.'
+            }
+          },
+
+          // 3. CORRETOR DE IMÓVEIS
+          corretor: {
+            profissao: 'Consultor Imobiliário',
+            registroProfissional: 'CRECI-[UF] [000000-F]',
+            whatsappMensagemPadrao:
+              'Olá! Vi seu site e gostaria de conversar sobre assessoria para compra ou venda.',
+            hero: {
+              sobretitulo: 'Consultoria Imobiliária · [Sua Cidade — UF]',
+              titulo:
+                'Consultor imobiliário com curadoria que simplifica decisões patrimoniais com segurança em [Sua Cidade].',
+              subtitulo:
+                'Assessoria independente para compra e venda, da triagem técnica e análise documental à condução reservada da negociação.',
+              ctaPrimario: 'Ver serviços',
+              ctaSecundario: 'Falar no WhatsApp'
+            },
+            credibilidade: [
+              {
+                numero: 10,
+                sufixo: '+',
+                label: 'Anos de atuação no setor',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 80,
+                sufixo: '+',
+                label: 'Operações assessoradas',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 100,
+                sufixo: '%',
+                label: 'Condução pessoal e sigilosa',
+                contexto: 'Do primeiro contato à conclusão'
+              }
+            ],
+            servicos: [
+              {
+                categoria: 'Compradores',
+                nome: 'Curadoria Sob Medida para Compra',
+                descricao:
+                  'Mapeamento criterioso de opções alinhadas ao seu perfil, evitando visitas improdutivas e comparando valor real de mercado.',
+                preco: '',
+                imagem: 'hero'
+              },
+              {
+                categoria: 'Proprietários',
+                nome: 'Avaliação Técnica e Venda Reservada',
+                descricao:
+                  'Estudo comparativo baseado em negociações efetivas da região, apresentação profissional e qualificação rigorosa de interessados.',
+                preco: '',
+                imagem: 'atendimento'
+              },
+              {
+                categoria: 'Segurança',
+                nome: 'Auditoria Prévia e Análise Documental',
+                descricao:
+                  'Levantamento de certidões e conferência prévia de registros antes da formalização de qualquer proposta.',
+                preco: '',
+                imagem: 'planejamento'
+              },
+              {
+                categoria: 'Investimento',
+                nome: 'Consultoria de Posicionamento Patrimonial',
+                descricao:
+                  'Leitura de liquidez, potencial de rentabilidade e suporte estratégico para decisões de médio e longo prazo.',
+                preco: '',
+                imagem: 'espaco'
+              }
+            ],
+            sobre: {
+              titulo: 'Atendimento seletivo, transparência nos números e sigilo em cada etapa.',
+              paragrafos: [
+                'Atuo de forma autônoma e dedicada para clientes que preferem qualidade técnica e filtro preciso em vez de volume excessivo de contatos.',
+                'Cada oportunidade é analisada pessoalmente quanto à localização, condições construtivas, histórico documental e coerência de preço.',
+                'Acompanhamento completo desde a definição de critérios até a assinatura final dos documentos.'
+              ],
+              diferenciais: [
+                {
+                  titulo: 'Filtro técnico prévio',
+                  texto: 'Você visita apenas opções realmente compatíveis com seus critérios.'
+                },
+                {
+                  titulo: 'Estudo de valor real',
+                  texto: 'Comparativo baseado em transações concretas da região.'
+                },
+                {
+                  titulo: 'Triagem documental rigorosa',
+                  texto: 'Verificação antecipada para evitar imprevistos na negociação.'
+                },
+                {
+                  titulo: 'Atendimento direto e reservado',
+                  texto: 'Sem repasse de contatos ou exposição desnecessária.'
+                }
+              ]
+            },
+            etapas: [
+              {
+                numero: '01',
+                titulo: 'Diagnóstico de perfil e objetivo',
+                descricao:
+                  'Conversa inicial para alinhar regiões desejadas, critérios técnicos e horizonte de decisão.'
+              },
+              {
+                numero: '02',
+                titulo: 'Seleção e estudo comparativo',
+                descricao:
+                  'Curadoria filtrada com análise de valor de mercado e histórico das opções selecionadas.'
+              },
+              {
+                numero: '03',
+                titulo: 'Visitas acompanhadas e análise',
+                descricao:
+                  'Avaliação presencial detalhada de aspectos construtivos, incidência solar e entorno.'
+              },
+              {
+                numero: '04',
+                titulo: 'Negociação e fechamento seguro',
+                descricao:
+                  'Estruturação da proposta, revisão contratual e acompanhamento até a conclusão em cartório.'
+              }
+            ],
+            depoimentos: [
+              {
+                texto:
+                  '[Substitua por um relato real: ex. O filtro inicial economizou semanas de visitas e encontramos exatamente o que buscávamos na terceira visita.]',
+                autor: '[Nome do Cliente 1]',
+                contexto: 'Cliente · Assessoria de Compra'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Precisávamos de discrição na venda e todo o processo foi conduzido com apenas interessados realmente qualificados.]',
+                autor: '[Nome do Cliente 2]',
+                contexto: 'Cliente · Venda Reservada'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. A clareza na conferência dos documentos trouxe muita tranquilidade para fecharmos o negócio.]',
+                autor: '[Nome do Cliente 3]',
+                contexto: 'Cliente · Consultoria Patrimonial'
+              }
+            ],
+            faq: [
+              {
+                pergunta: 'Qual a vantagem de trabalhar com um consultor autônomo?',
+                resposta:
+                  'Você conta com atendimento personalizado do início ao fim, sem rodízio de atendentes e com visão focada no seu objetivo.'
+              },
+              {
+                pergunta: 'Como é feita a avaliação para quem deseja vender?',
+                resposta:
+                  'Realizo visita técnica e apresento um comparativo objetivo de mercado para definir um posicionamento competitivo de preço.'
+              },
+              {
+                pergunta: 'Há acompanhamento documental durante a negociação?',
+                resposta:
+                  'Sim. Toda a verificação de certidões e alinhamento contratual é acompanhada antes da assinatura definitiva.'
+              },
+              {
+                pergunta: 'É possível buscar opções fora de portais públicos?',
+                resposta:
+                  'Sim, trabalhamos com prospecção direcionada conforme o perfil buscado, respeitando a reserva dos proprietários.'
+              },
+              {
+                pergunta: 'Como agendar uma conversa inicial?',
+                resposta:
+                  'Basta enviar uma mensagem pelo WhatsApp ou preencher o formulário abaixo para alinharmos o melhor horário.'
+              }
+            ],
+            contatoFinal: {
+              titulo: 'Vamos conversar sobre o seu próximo passo?',
+              subtitulo:
+                'Entre em contato para alinhar seus critérios de busca ou solicitar uma avaliação reservada.'
+            }
+          },
+
+          // 4. CLÍNICA (SAÚDE, ESTÉTICA OU BEM-ESTAR)
+          clinica: {
+            profissao: 'Clínica Especializada',
+            registroProfissional: 'Registro Técnico [CRM / CRO / CREFITO 000000]',
+            whatsappMensagemPadrao:
+              'Olá! Gostaria de informações sobre os protocolos da clínica e horários para agendamento.',
+            hero: {
+              sobretitulo: 'Clínica Integrada · [Sua Cidade — UF]',
+              titulo:
+                'Clínica com atendimento que une precisão técnica, conforto e cuidado individual em [Sua Cidade].',
+              subtitulo:
+                'Protocolos personalizados de saúde, prevenção e bem-estar conduzidos com tempo adequado de escuta, tecnologia atualizada e ambiente acolhedor.',
+              ctaPrimario: 'Conhecer atendimentos',
+              ctaSecundario: 'Agendar horário'
+            },
+            credibilidade: [
+              {
+                numero: 10,
+                sufixo: '+',
+                label: 'Anos de prática clínica',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 500,
+                sufixo: '+',
+                label: 'Pacientes atendidos',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 60,
+                sufixo: ' min',
+                label: 'Tempo médio de consulta',
+                contexto: 'Escuta atenta e sem pressa'
+              }
+            ],
+            servicos: [
+              {
+                categoria: 'Diagnóstico',
+                nome: 'Consulta e Avaliação Integrada',
+                descricao:
+                  'Atendimento completo com escuta detalhada do histórico, exame criterioso e definição de plano terapêutico individual.',
+                preco: 'R$ [Valor]',
+                imagem: 'atendimento'
+              },
+              {
+                categoria: 'Protocolos',
+                nome: 'Tratamentos Personalizados',
+                descricao:
+                  'Procedimentos conduzidos com base em evidências, respeitando a naturalidade, o conforto e os objetivos de cada paciente.',
+                preco: 'Sob avaliação',
+                imagem: 'espaco'
+              },
+              {
+                categoria: 'Prevenção',
+                nome: 'Acompanhamento Preventivo Contínuo',
+                descricao:
+                  'Revisões periódicas programadas para manter resultados estáveis, prevenir intercorrências e promover saúde duradoura.',
+                preco: '',
+                imagem: 'bemEstar'
+              },
+              {
+                categoria: 'Orientação',
+                nome: 'Segunda Opinião e Planejamento',
+                descricao:
+                  'Análise técnica imparcial de exames e planos anteriores para que você tome decisões com clareza e segurança.',
+                preco: '',
+                imagem: 'planejamento'
+              }
+            ],
+            sobre: {
+              titulo: 'Cuidado centrado no paciente, sem atendimentos apressados.',
+              paragrafos: [
+                'Estruturamos nossa clínica em [Sua Cidade] para oferecer o oposto do atendimento padronizado: consultas com tempo adequado, ambiente silencioso e comunicação clara em cada etapa.',
+                'Antes de indicar qualquer procedimento ou protocolo, realizamos uma avaliação criteriosa das suas necessidades reais, histórico e expectativas.',
+                'Nosso compromisso é aliar atualização científica constante a uma experiência humana acolhedora do agendamento ao pós-atendimento.'
+              ],
+              diferenciais: [
+                {
+                  titulo: 'Consultas sem pressa',
+                  texto: 'Agenda planejada para ouvir você com atenção e responder todas as dúvidas.'
+                },
+                {
+                  titulo: 'Protocolos individualizados',
+                  texto: 'Condutas definidas sob medida, nunca em pacotes genéricos.'
+                },
+                {
+                  titulo: 'Estrutura confortável e reservada',
+                  texto: 'Espaço pensado para privacidade, pontualidade e bem-estar.'
+                },
+                {
+                  titulo: 'Acompanhamento pós-consulta',
+                  texto: 'Canal direto para orientações durante toda a evolução do tratamento.'
+                }
+              ]
+            },
+            etapas: [
+              {
+                numero: '01',
+                titulo: 'Agendamento ágil',
+                descricao:
+                  'Escolha do melhor dia e horário pelo WhatsApp, com confirmação rápida e orientações prévias.'
+              },
+              {
+                numero: '02',
+                titulo: 'Avaliação e escuta clínica',
+                descricao:
+                  'Consulta detalhada para compreender queixas, histórico e objetivos com profundidade.'
+              },
+              {
+                numero: '03',
+                titulo: 'Plano de cuidado transparente',
+                descricao:
+                  'Apresentação clara das opções indicadas, etapas previstas e prazos de acompanhamento.'
+              },
+              {
+                numero: '04',
+                titulo: 'Evolução e retorno programado',
+                descricao:
+                  'Monitoramento próximo dos resultados e ajustes pontuais sempre que necessário.'
+              }
+            ],
+            depoimentos: [
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Desde a recepção até a consulta, o cuidado com o horário e a calma para explicar cada etapa fizeram toda a diferença.]',
+                autor: '[Nome do Paciente 1]',
+                contexto: 'Paciente · Avaliação Inicial'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Senti muita segurança porque só foi indicado o que realmente fazia sentido para o meu caso.]',
+                autor: '[Nome do Paciente 2]',
+                contexto: 'Paciente · Acompanhamento Clínico'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Ambiente impecável, pontualidade rara e retorno atencioso após o atendimento.]',
+                autor: '[Nome do Paciente 3]',
+                contexto: 'Paciente · Tratamento Preventivo'
+              }
+            ],
+            faq: [
+              {
+                pergunta: 'Como funciona a primeira consulta na clínica?',
+                resposta:
+                  'Reservamos um horário estendido para ouvir seu histórico, avaliar suas necessidades e elaborar um plano de cuidado claro e personalizado.'
+              },
+              {
+                pergunta: 'Qual é o tempo médio de espera na recepção?',
+                resposta:
+                  'Trabalhamos com agenda programada e intervalos adequados entre atendimentos para prezar pela pontualidade.'
+              },
+              {
+                pergunta: 'Vocês emitem nota fiscal para solicitação de reembolso?',
+                resposta:
+                  'Sim, fornecemos documentação fiscal completa e relatórios técnicos quando aplicáveis ao seu plano de saúde.'
+              },
+              {
+                pergunta: 'É necessário trazer exames anteriores?',
+                resposta:
+                  'Se você possuir exames recentes relacionados à sua queixa ou objetivo, recomenda-se trazê-los ou enviá-los antes da consulta.'
+              },
+              {
+                pergunta: 'Como agendar ou remarcar um horário?',
+                resposta:
+                  'Todo o atendimento de agenda é feito diretamente pelo nosso WhatsApp, com resposta rápida em horário comercial.'
+              }
+            ],
+            contatoFinal: {
+              titulo: 'Deseja agendar sua avaliação ou tirar uma dúvida?',
+              subtitulo:
+                'Fale diretamente com nossa equipe pelo formulário abaixo para consultar os próximos horários disponíveis.'
+            }
+          },
+
+          // 5. CLÍNICA VETERINÁRIA
+          veterinaria: {
+            profissao: 'Clínica Veterinária',
+            registroProfissional: 'CRMV-[UF] [00000]',
+            whatsappMensagemPadrao:
+              'Olá! Gostaria de agendar uma consulta ou tirar uma dúvida sobre atendimento para meu pet.',
+            hero: {
+              sobretitulo: 'Medicina Veterinária · [Sua Cidade — UF]',
+              titulo:
+                'Clínica veterinária com atendimento que oferece cuidado gentil e precisão clínica para seu pet em [Sua Cidade].',
+              subtitulo:
+                'Consultas preventivas, diagnósticos precisos e manejo de baixo estresse para cães e gatos, com comunicação clara para os tutores.',
+              ctaPrimario: 'Ver serviços veterinários',
+              ctaSecundario: 'Falar no WhatsApp'
+            },
+            credibilidade: [
+              {
+                numero: 8,
+                sufixo: '+',
+                label: 'Anos dedicados a cães e gatos',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 600,
+                sufixo: '+',
+                label: 'Pets acompanhados',
+                contexto: 'Exemplo ilustrativo — personalize no CONFIG'
+              },
+              {
+                numero: 100,
+                sufixo: '%',
+                label: 'Manejo acolhedor e sem pressa',
+                contexto: 'Foco em redução de estresse'
+              }
+            ],
+            servicos: [
+              {
+                categoria: 'Clínica Geral',
+                nome: 'Consulta Clínica e Check-up Preventivo',
+                descricao:
+                  'Exame físico minucioso, revisão do protocolo vacinal e orientações personalizadas conforme idade, raça e rotina do pet.',
+                preco: 'R$ [Valor]',
+                imagem: 'atendimento'
+              },
+              {
+                categoria: 'Prevenção',
+                nome: 'Protocolo de Vacinação Individualizado',
+                descricao:
+                  'Imunização segura com avaliação prévia de saúde e calendário adaptado ao estilo de vida de cães e gatos.',
+                preco: 'Sob consulta',
+                imagem: 'planejamento'
+              },
+              {
+                categoria: 'Diagnóstico',
+                nome: 'Exames e Acompanhamento Sênior',
+                descricao:
+                  'Monitoramento periódico para pets idosos ou com condições crônicas, priorizando conforto e qualidade de vida.',
+                preco: '',
+                imagem: 'espaco'
+              },
+              {
+                categoria: 'Bem-estar',
+                nome: 'Orientação Nutricional e Comportamental',
+                descricao:
+                  'Ajustes práticos de rotina, alimentação e ambiente doméstico para reduzir ansiedade e prevenir doenças.',
+                preco: '',
+                imagem: 'bemEstar'
+              }
+            ],
+            sobre: {
+              titulo: 'Medicina veterinária cuidadosa, transparente e centrada no bem-estar animal.',
+              paragrafos: [
+                'Sabemos que a ida ao veterinário pode gerar ansiedade tanto no pet quanto no tutor. Por isso, estruturamos um atendimento calmo, com horários espaçados e manejo respeitoso.',
+                'Explicamos cada exame, hipótese diagnóstica e opção de tratamento com clareza, garantindo que você participe de todas as decisões sobre a saúde do seu companheiro.',
+                'Nosso foco é unir prevenção inteligente, diagnóstico criterioso e acolhimento real em todas as fases da vida do animal.'
+              ],
+              diferenciais: [
+                {
+                  titulo: 'Manejo de baixo estresse',
+                  texto: 'Tempo de adaptação e abordagem gentil para cães e gatos.'
+                },
+                {
+                  titulo: 'Comunicação clara com tutores',
+                  texto: 'Orientações escritas e objetivas sobre medicações e cuidados em casa.'
+                },
+                {
+                  titulo: 'Medicina preventiva ativa',
+                  texto: 'Check-ups periódicos para identificar alterações antes de virarem urgências.'
+                },
+                {
+                  titulo: 'Acompanhamento pós-consulta',
+                  texto: 'Contato direto via WhatsApp para acompanhar a recuperação do seu pet.'
+                }
+              ]
+            },
+            etapas: [
+              {
+                numero: '01',
+                titulo: 'Pré-agendamento e triagem',
+                descricao:
+                  'Contato pelo WhatsApp para entender os sinais do pet e escolher o horário mais tranquilo.'
+              },
+              {
+                numero: '02',
+                titulo: 'Consulta acolhedora e exame',
+                descricao:
+                  'Avaliação clínica completa respeitando o tempo e o conforto emocional do animal.'
+              },
+              {
+                numero: '03',
+                titulo: 'Conduta e plano preventivo',
+                descricao:
+                  'Definição transparente de exames, tratamentos ou ajustes de rotina e alimentação.'
+              },
+              {
+                numero: '04',
+                titulo: 'Acompanhamento contínuo',
+                descricao:
+                  'Suporte após a consulta para tirar dúvidas e monitorar a evolução do tratamento.'
+              }
+            ],
+            depoimentos: [
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Nossa gata costumava ficar muito estressada em consultas, mas o atendimento calmo e sem pressa mudou completamente a experiência.]',
+                autor: '[Nome do Tutor 1]',
+                contexto: 'Tutor · Consulta Felina'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Explicações claras de cada exame e acompanhamento atencioso pelo WhatsApp durante toda a recuperação.]',
+                autor: '[Nome do Tutor 2]',
+                contexto: 'Tutor · Acompanhamento Sênior'
+              },
+              {
+                texto:
+                  '[Substitua por um relato real: ex. Pontualidade impecável, ambiente limpo e muito carinho no manejo desde a entrada.]',
+                autor: '[Nome do Tutor 3]',
+                contexto: 'Tutor · Check-up Preventivo'
+              }
+            ],
+            faq: [
+              {
+                pergunta: 'Vocês atendem com hora marcada para evitar espera com o pet?',
+                resposta:
+                  'Sim. O agendamento prévio reduz o tempo em recepção e evita encontros estressantes entre animais.'
+              },
+              {
+                pergunta: 'O atendimento inclui cães e gatos?',
+                resposta:
+                  'Sim, com cuidados específicos de manejo e ambiente tranquilo adaptados às necessidades de cada espécie.'
+              },
+              {
+                pergunta: 'O que devo levar na primeira consulta?',
+                resposta:
+                  'Traga a carteirinha de vacinação, histórico de medicações em uso e eventuais exames anteriores.'
+              },
+              {
+                pergunta: 'Vocês orientam sobre preparo antes da consulta?',
+                resposta:
+                  'Sim. Ao confirmar o horário pelo WhatsApp, enviamos recomendações simples de transporte e eventual jejum se houver exames.'
+              },
+              {
+                pergunta: 'Como agendar uma consulta ou tirar uma dúvida rápida?',
+                resposta:
+                  'Clique no botão de WhatsApp ou preencha o formulário abaixo informando a espécie e a necessidade do seu pet.'
+              }
+            ],
+            contatoFinal: {
+              titulo: 'Quer agendar um horário tranquilo para o seu pet?',
+              subtitulo:
+                'Envie uma mensagem informando se é cão ou gato e o motivo do atendimento para verificarmos a agenda.'
+            }
+          }
+        }
+      };
+
+      /* =====================================================================
+         MOTOR DE RENDERIZAÇÃO (NÃO É NECESSÁRIO EDITAR ABAIXO)
+         ===================================================================== */
+      (function initSite() {
+        const $ = (selector) => document.querySelector(selector);
+        const $$ = (selector) => document.querySelectorAll(selector);
+
+        const escapeHTML = (str) =>
+          String(str ?? '')
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;');
+
+        const presetKey = CONFIG.PRESETS[CONFIG.ACTIVE_PRESET] ? CONFIG.ACTIVE_PRESET : 'clinica';
+        const PRESET = CONFIG.PRESETS[presetKey];
+        const DADOS = CONFIG.dadosGerais;
+        const R = CONFIG.rotulos;
+
+        const replaceTokens = (text) =>
+          String(text ?? '')
+            .replace(/\[Sua Cidade\]/g, DADOS.cidade)
+            .replace(/\[Sua Cidade — UF\]/g, DADOS.cidade)
+            .replace(/\[Seu Nome ou Marca\]/g, DADOS.nome);
+
+        const resolveImage = (keyOrUrl) => CONFIG.imagens[keyOrUrl] || keyOrUrl || '';
+
+        const getContrastInk = (hexColor) => {
+          const hex = String(hexColor || '').replace('#', '').trim();
+          if (!/^[0-9a-fA-F]{6}$/.test(hex)) return '#0B0C0E';
+          const r = parseInt(hex.slice(0, 2), 16) / 255;
+          const g = parseInt(hex.slice(2, 4), 16) / 255;
+          const b = parseInt(hex.slice(4, 6), 16) / 255;
+          const toLinear = (c) => (c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4));
+          const luminance = 0.2126 * toLinear(r) + 0.7152 * toLinear(g) + 0.0722 * toLinear(b);
+          return luminance > 0.36 ? '#0B0C0E' : '#F4F1EA';
+        };
+
+        const defaultWaMessage = replaceTokens(PRESET.whatsappMensagemPadrao);
+
+        const buildWhatsAppUrl = (message) => {
+          const cleanPhone = String(DADOS.whatsapp || '').replace(/\D/g, '');
+          const text = encodeURIComponent(message || defaultWaMessage);
+          return cleanPhone ? `https://wa.me/${cleanPhone}?text=${text}` : `https://wa.me/?text=${text}`;
+        };
+
+        // 1. Aplicar cores editáveis do CONFIG (com contraste automático no texto dos botões)
+        const root = document.documentElement;
+        if (CONFIG.corPrincipal) {
+          root.style.setProperty('--bg-primary', CONFIG.corPrincipal);
+        }
+        if (CONFIG.corDestaque) {
+          root.style.setProperty('--accent', CONFIG.corDestaque);
+          root.style.setProperty('--accent-ink', getContrastInk(CONFIG.corDestaque));
+        }
+
+        // 2. Atualizar Título, Metatags SEO/OpenGraph e Schema.org
+        const pageTitle = `${DADOS.nome} | ${PRESET.profissao}`;
+        const pageDescription = replaceTokens(PRESET.hero.subtitulo);
+        document.title = pageTitle;
+
+        const metaDesc = document.querySelector('meta[name="description"]');
+        const ogSite = document.querySelector('meta[property="og:site_name"]');
+        const ogTitle = document.querySelector('meta[property="og:title"]');
+        const ogDesc = document.querySelector('meta[property="og:description"]');
+        const twTitle = document.querySelector('meta[name="twitter:title"]');
+        const twDesc = document.querySelector('meta[name="twitter:description"]');
+
+        if (metaDesc) metaDesc.setAttribute('content', pageDescription);
+        if (ogSite) ogSite.setAttribute('content', DADOS.nome);
+        if (ogTitle) ogTitle.setAttribute('content', pageTitle);
+        if (ogDesc) ogDesc.setAttribute('content', pageDescription);
+        if (twTitle) twTitle.setAttribute('content', pageTitle);
+        if (twDesc) twDesc.setAttribute('content', pageDescription);
+
+        const jsonLdEl = $('#schema-jsonld');
+        if (jsonLdEl) {
+          jsonLdEl.textContent = JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ProfessionalService',
+            name: `${DADOS.nome} — ${PRESET.profissao}`,
+            description: pageDescription,
+            areaServed: DADOS.cidade,
+            email: DADOS.email
+          });
+        }
+
+        // 3. Rótulos de Navegação e Botões Globais
+        Object.entries(R.nav).forEach(([key, label]) => {
+          $$(`[data-nav="${key}"]`).forEach((el) => {
+            el.textContent = label;
+          });
+        });
+
+        $('#brand-wordmark').textContent = DADOS.nome;
+        const defaultWaUrl = buildWhatsAppUrl(defaultWaMessage);
+
+        const headerWaBtn = $('#header-whatsapp-btn');
+        headerWaBtn.textContent = R.botoes.headerWhatsapp;
+        headerWaBtn.href = defaultWaUrl;
+
+        const mobileWaBtn = $('#mobile-whatsapp-btn');
+        mobileWaBtn.textContent = R.botoes.headerWhatsapp;
+        mobileWaBtn.href = defaultWaUrl;
+
+        const floatingWa = $('#floating-whatsapp');
+        floatingWa.href = defaultWaUrl;
+        floatingWa.setAttribute('aria-label', R.botoes.whatsappFlutuanteAria);
+
+        // 4. Hero
+        $('#hero-kicker').textContent = replaceTokens(PRESET.hero.sobretitulo);
+        $('#hero-title').textContent = replaceTokens(PRESET.hero.titulo);
+        $('#hero-subtitle').textContent = replaceTokens(PRESET.hero.subtitulo);
+
+        const heroPrimaryBtn = $('#hero-cta-primary');
+        heroPrimaryBtn.textContent = PRESET.hero.ctaPrimario || R.botoes.heroPrimario;
+
+        const heroWaBtn = $('#hero-cta-whatsapp');
+        heroWaBtn.textContent = PRESET.hero.ctaSecundario || R.botoes.heroSecundario;
+        heroWaBtn.href = defaultWaUrl;
+
+        const heroImg = $('#hero-image');
+        heroImg.src = resolveImage(CONFIG.imagens.hero);
+        heroImg.alt = CONFIG.imagens.heroAlt;
+
+        // 5. Números de Credibilidade
+        const metricsGrid = $('#metrics-grid');
+        const credibilidade = PRESET.credibilidade || [];
+        if (credibilidade.length === 0) {
+          $('#credibilidade-section').style.display = 'none';
+        } else {
+          metricsGrid.innerHTML = credibilidade
+            .map(
+              (item, idx) => `
+              <div class="metric-item">
+                <div class="metric-value tabular" data-target="${Number(item.numero)}" data-suffix="${escapeHTML(item.sufixo || '')}" id="metric-num-${idx}">
+                  0${escapeHTML(item.sufixo || '')}
+                </div>
+                <div class="metric-label">${escapeHTML(replaceTokens(item.label))}</div>
+                <div class="metric-context">${escapeHTML(replaceTokens(item.contexto))}</div>
+              </div>
+            `
+            )
+            .join('');
+        }
+
+        // 6. Serviços / Produtos (Oculta toda a seção + links se a lista estiver vazia)
+        const servicesSection = $('#servicos');
+        const servicos = Array.isArray(PRESET.servicos) ? PRESET.servicos : [];
+
+        if (servicos.length === 0) {
+          servicesSection.style.display = 'none';
+          $$('a[href="#servicos"]').forEach((link) => {
+            link.style.display = 'none';
+          });
+          heroPrimaryBtn.href = '#sobre';
+        } else {
+          $('#services-kicker').textContent = R.secoes.servicos.sobretitulo;
+          $('#services-title').textContent = R.secoes.servicos.titulo;
+          $('#services-subtitle').textContent = R.secoes.servicos.subtitulo;
+
+          const filtersContainer = $('#service-filters');
+          const servicesGrid = $('#services-grid');
+          const categoriasUnicas = [
+            ...new Set(servicos.map((item) => item.categoria).filter(Boolean))
+          ];
+          const usaFiltro = categoriasUnicas.length > 1;
+          const allLabel = R.secoes.servicos.filtroTodos;
+          let activeCategoria = allLabel;
+
+          const renderFilters = () => {
+            if (!usaFiltro) {
+              filtersContainer.style.display = 'none';
+              return;
+            }
+            const opcoes = [allLabel, ...categoriasUnicas];
+            filtersContainer.innerHTML = opcoes
+              .map(
+                (cat) => `
+                <button
+                  type="button"
+                  class="filter-btn ${cat === activeCategoria ? 'is-active' : ''}"
+                  data-categoria="${escapeHTML(cat)}"
+                  aria-pressed="${cat === activeCategoria}"
+                >
+                  ${escapeHTML(cat)}
+                </button>
+              `
+              )
+              .join('');
+          };
+
+          const renderServices = () => {
+            const list =
+              !usaFiltro || activeCategoria === allLabel
+                ? servicos
+                : servicos.filter((item) => item.categoria === activeCategoria);
+
+            servicesGrid.innerHTML = list
+              .map((srv) => {
+                const srvNome = replaceTokens(srv.nome);
+                const waMsg = `Olá, ${DADOS.nome}! Gostaria de mais informações sobre "${srvNome}".`;
+                const waLink = buildWhatsAppUrl(waMsg);
+                const hasPrice = Boolean(srv.preco && String(srv.preco).trim());
+                const imgSrc = resolveImage(srv.imagem);
+
+                return `
+                  <article class="service-card">
+                    <div class="service-media">
+                      <img
+                        src="${escapeHTML(imgSrc)}"
+                        alt="${escapeHTML(srvNome)}"
+                        loading="lazy"
+                        referrerpolicy="no-referrer"
+                        onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');"
+                      />
+                      <div class="image-fallback" aria-hidden="true">
+                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                          <rect x="3" y="4" width="18" height="16" rx="2" />
+                          <line x1="7" y1="9" x2="17" y2="9" />
+                          <line x1="7" y1="13" x2="13" y2="13" />
+                        </svg>
+                        <span style="font-size: 0.875rem; font-weight: 500">${escapeHTML(srvNome)}</span>
+                      </div>
+                    </div>
+                    <div class="service-body">
+                      ${srv.categoria ? `<div class="service-category">${escapeHTML(srv.categoria)}</div>` : ''}
+                      <h3 class="service-title">${escapeHTML(srvNome)}</h3>
+                      <p class="service-desc">${escapeHTML(replaceTokens(srv.descricao))}</p>
+                      <div class="service-footer ${hasPrice ? '' : 'no-price'}">
+                        ${hasPrice ? `<span class="service-price tabular">${escapeHTML(srv.preco)}</span>` : ''}
+                        <a
+                          href="${waLink}"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn btn-outline service-cta"
+                        >
+                          ${escapeHTML(R.botoes.cardServico)}
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                `;
+              })
+              .join('');
+          };
+
+          renderFilters();
+          renderServices();
+
+          filtersContainer.addEventListener('click', (event) => {
+            const button = event.target.closest('.filter-btn');
+            if (!button) return;
+            activeCategoria = button.getAttribute('data-categoria') || allLabel;
+            renderFilters();
+            renderServices();
+          });
+        }
+
+        // 7. Sobre
+        const aboutImg = $('#about-image');
+        aboutImg.src = resolveImage(CONFIG.imagens.sobre);
+        aboutImg.alt = CONFIG.imagens.sobreAlt;
+        aboutImg.addEventListener('error', () => {
+          aboutImg.style.display = 'none';
+          $('#about-image-fallback').classList.add('is-visible');
+        });
+        $('#about-fallback-profession').textContent = PRESET.profissao;
+        $('#about-fallback-name').textContent = DADOS.nome;
+        $('#about-kicker').textContent = R.secoes.sobre.sobretitulo;
+        $('#about-title').textContent = replaceTokens(PRESET.sobre.titulo);
+        $('#about-prose').innerHTML = (PRESET.sobre.paragrafos || [])
+          .map((p) => `<p>${escapeHTML(replaceTokens(p))}</p>`)
+          .join('');
+        $('#about-differentials').innerHTML = (PRESET.sobre.diferenciais || [])
+          .map(
+            (dif) => `
+            <div>
+              <h3 class="differential-item-title">${escapeHTML(replaceTokens(dif.titulo))}</h3>
+              <p class="differential-item-text">${escapeHTML(replaceTokens(dif.texto))}</p>
+            </div>
+          `
+          )
+          .join('');
+
+        // 8. Como Funciona o Atendimento (oculta se vazio)
+        const etapas = Array.isArray(PRESET.etapas) ? PRESET.etapas : [];
+        if (etapas.length === 0) {
+          $('#atendimento').style.display = 'none';
+          $$('a[href="#atendimento"]').forEach((link) => {
+            link.style.display = 'none';
+          });
+        } else {
+          $('#steps-kicker').textContent = R.secoes.atendimento.sobretitulo;
+          $('#steps-title').textContent = R.secoes.atendimento.titulo;
+          $('#steps-subtitle').textContent = R.secoes.atendimento.subtitulo;
+          $('#steps-grid').innerHTML = etapas
+            .map(
+              (step) => `
+              <article class="step-card reveal">
+                <span class="step-num tabular">${escapeHTML(step.numero)}</span>
+                <h3 class="step-title">${escapeHTML(replaceTokens(step.titulo))}</h3>
+                <p class="step-desc">${escapeHTML(replaceTokens(step.descricao))}</p>
+              </article>
+            `
+            )
+            .join('');
+        }
+
+        // 9. Depoimentos (oculta se vazio)
+        const depoimentos = Array.isArray(PRESET.depoimentos) ? PRESET.depoimentos : [];
+        if (depoimentos.length === 0) {
+          $('#depoimentos').style.display = 'none';
+          $$('a[href="#depoimentos"]').forEach((link) => {
+            link.style.display = 'none';
+          });
+        } else {
+          $('#testimonials-kicker').textContent = R.secoes.depoimentos.sobretitulo;
+          $('#testimonials-title').textContent = R.secoes.depoimentos.titulo;
+          $('#testimonials-subtitle').textContent = R.secoes.depoimentos.subtitulo;
+          $('#testimonials-grid').innerHTML = depoimentos
+            .map(
+              (dep) => `
+              <article class="testimonial-card reveal">
+                <blockquote class="testimonial-quote">“${escapeHTML(replaceTokens(dep.texto))}”</blockquote>
+                <footer class="testimonial-author">
+                  <div class="testimonial-name">${escapeHTML(replaceTokens(dep.autor))}</div>
+                  <div class="testimonial-meta">${escapeHTML(replaceTokens(dep.contexto))}</div>
+                </footer>
+              </article>
+            `
+            )
+            .join('');
+        }
+
+        // 10. Perguntas Frequentes (Acordeão, oculta se vazio)
+        const faqItems = Array.isArray(PRESET.faq) ? PRESET.faq : [];
+        if (faqItems.length === 0) {
+          $('#duvidas').style.display = 'none';
+          $$('a[href="#duvidas"]').forEach((link) => {
+            link.style.display = 'none';
+          });
+        } else {
+          $('#faq-kicker').textContent = R.secoes.faq.sobretitulo;
+          $('#faq-title').textContent = R.secoes.faq.titulo;
+          $('#faq-subtitle').textContent = R.secoes.faq.subtitulo;
+          const faqList = $('#faq-list');
+          faqList.innerHTML = faqItems
+            .map(
+              (item, idx) => `
+              <div class="faq-item">
+                <button
+                  type="button"
+                  class="faq-trigger"
+                  aria-expanded="${idx === 0 ? 'true' : 'false'}"
+                  aria-controls="faq-panel-${idx}"
+                  id="faq-btn-${idx}"
+                >
+                  <span>${escapeHTML(replaceTokens(item.pergunta))}</span>
+                  <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                  </svg>
+                </button>
+                <div
+                  class="faq-panel ${idx === 0 ? 'is-open' : ''}"
+                  id="faq-panel-${idx}"
+                  role="region"
+                  aria-labelledby="faq-btn-${idx}"
+                >
+                  <div class="faq-panel-inner">
+                    <p class="faq-answer">${escapeHTML(replaceTokens(item.resposta))}</p>
+                  </div>
+                </div>
+              </div>
+            `
+            )
+            .join('');
+
+          faqList.addEventListener('click', (event) => {
+            const trigger = event.target.closest('.faq-trigger');
+            if (!trigger) return;
+            const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+            const panelId = trigger.getAttribute('aria-controls');
+            const panel = document.getElementById(panelId);
+
+            faqList.querySelectorAll('.faq-trigger').forEach((btn) => {
+              btn.setAttribute('aria-expanded', 'false');
+            });
+            faqList.querySelectorAll('.faq-panel').forEach((el) => {
+              el.classList.remove('is-open');
+            });
+
+            if (!isExpanded && panel) {
+              trigger.setAttribute('aria-expanded', 'true');
+              panel.classList.add('is-open');
+            }
+          });
+        }
+
+        // 11. Chamada Final & Formulário WhatsApp
+        $('#contact-kicker').textContent = R.secoes.contato.sobretitulo;
+        $('#contact-title').textContent = replaceTokens(PRESET.contatoFinal.titulo);
+        $('#contact-subtitle').textContent = replaceTokens(PRESET.contatoFinal.subtitulo);
+        $('#contact-label-whatsapp').textContent = R.secoes.contato.labelWhatsapp;
+        $('#contact-label-email').textContent = R.secoes.contato.labelEmail;
+        $('#contact-label-registro').textContent = R.secoes.contato.labelRegistro;
+
+        const contactWaLink = $('#contact-whatsapp-link');
+        contactWaLink.textContent = DADOS.whatsappExibicao;
+        contactWaLink.href = defaultWaUrl;
+
+        const contactEmailLink = $('#contact-email-link');
+        contactEmailLink.textContent = DADOS.email;
+        contactEmailLink.href = `mailto:${DADOS.email}`;
+
+        if (PRESET.registroProfissional) {
+          $('#contact-registro').textContent = replaceTokens(PRESET.registroProfissional);
+        } else {
+          $('#contact-registro-wrap').style.display = 'none';
+        }
+
+        // Preencher labels e placeholders do formulário a partir de CONFIG
+        const F = R.secoes.formulario;
+        $('#form-label-name').textContent = F.labelNome;
+        $('#lead-name').placeholder = F.placeholderNome;
+        $('#form-label-phone').textContent = F.labelTelefone;
+        $('#lead-phone').placeholder = F.placeholderTelefone;
+        $('#form-label-intent').textContent = F.labelObjetivo;
+        $('#form-label-extra').textContent = F.labelComplemento;
+        $('#lead-extra').placeholder = F.placeholderComplemento;
+        $('#form-label-message').textContent = F.labelMensagem;
+        $('#lead-message').placeholder = F.placeholderMensagem;
+        $('#form-submit-btn').textContent = R.botoes.enviarFormulario;
+        $('#form-confirm-kicker').textContent = F.confirmacaoSobretitulo;
+        $('#form-confirm-title').textContent = F.confirmacaoTitulo;
+        $('#form-confirm-subtitle').textContent = F.confirmacaoSubtitulo;
+        $('#form-whatsapp-launch').textContent = R.botoes.abrirWhatsappFormulario;
+        $('#form-reset-btn').textContent = R.botoes.editarFormulario;
+
+        const intentSelect = $('#lead-intent');
+        const opcoesSelect = [
+          ...servicos.map((s) => replaceTokens(s.nome)),
+          'Agendar atendimento inicial',
+          'Outras informações'
+        ];
+        intentSelect.innerHTML = opcoesSelect
+          .map((opt) => `<option value="${escapeHTML(opt)}">${escapeHTML(opt)}</option>`)
+          .join('');
+
+        const form = $('#whatsapp-form');
+        const errorBox = $('#form-error');
+        const errorText = $('#form-error-text');
+        const confirmationBox = $('#form-confirmation');
+        const previewText = $('#form-preview-text');
+        const launchBtn = $('#form-whatsapp-launch');
+        const resetBtn = $('#form-reset-btn');
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          errorBox.classList.remove('is-error');
+
+          const nome = $('#lead-name').value.trim();
+          const telefone = $('#lead-phone').value.trim();
+          const assunto = $('#lead-intent').value;
+          const extra = $('#lead-extra').value.trim();
+          const mensagem = $('#lead-message').value.trim();
+
+          if (nome.length < 2) {
+            errorText.textContent = 'Por favor, informe seu nome para personalizar o atendimento.';
+            errorBox.classList.add('is-error');
+            $('#lead-name').focus();
+            return;
+          }
+
+          const digits = telefone.replace(/\D/g, '');
+          if (digits.length < 10) {
+            errorText.textContent = 'Informe um número de WhatsApp válido com DDD.';
+            errorBox.classList.add('is-error');
+            $('#lead-phone').focus();
+            return;
+          }
+
+          const lines = [
+            `Olá, ${DADOS.nome}! Meu nome é ${nome}.`,
+            `Assunto: ${assunto}.`
+          ];
+          if (extra) lines.push(`${F.labelComplemento}: ${extra}.`);
+          if (mensagem) lines.push(`Mensagem: ${mensagem}`);
+          lines.push(`Meu WhatsApp para retorno: ${telefone}.`);
+
+          const compiledMessage = lines.join('\n');
+          previewText.textContent = compiledMessage;
+          launchBtn.href = buildWhatsAppUrl(compiledMessage);
+
+          form.style.display = 'none';
+          confirmationBox.classList.add('is-visible');
+        });
+
+        resetBtn.addEventListener('click', () => {
+          confirmationBox.classList.remove('is-visible');
+          form.style.display = 'block';
+        });
+
+        // 12. Rodapé
+        const currentYear = new Date().getFullYear();
+        $('#footer-brand').textContent = `${DADOS.nome} · ${PRESET.profissao}`;
+        const footerReg = $('#footer-registro');
+        if (PRESET.registroProfissional) {
+          footerReg.textContent = replaceTokens(PRESET.registroProfissional);
+        } else {
+          footerReg.style.display = 'none';
+        }
+        $('#footer-city').textContent = DADOS.cidade;
+
+        const igLink = $('#footer-instagram');
+        igLink.textContent = `Instagram (${DADOS.instagram})`;
+        igLink.href = DADOS.instagramUrl;
+
+        const footerEmail = $('#footer-email');
+        footerEmail.textContent = DADOS.email;
+        footerEmail.href = `mailto:${DADOS.email}`;
+
+        $('#footer-rights').textContent = `© ${currentYear} ${DADOS.nome}. Todos os direitos reservados.`;
+        $('#footer-disclaimer').textContent = R.secoes.rodape.disclaimer;
+
+        // 13. Comportamento do Header Fixo e Menu Mobile
+        const header = $('#site-header');
+        const handleScrollHeader = () => {
+          if (window.scrollY > 24) {
+            header.classList.add('is-scrolled');
+          } else {
+            header.classList.remove('is-scrolled');
+          }
+        };
+        window.addEventListener('scroll', handleScrollHeader, { passive: true });
+        handleScrollHeader();
+
+        const menuToggle = $('#menu-toggle');
+        const mobileNav = $('#mobile-nav');
+        const setMobileMenu = (open) => {
+          menuToggle.setAttribute('aria-expanded', String(open));
+          mobileNav.setAttribute('aria-hidden', String(!open));
+          mobileNav.classList.toggle('is-open', open);
+          document.body.style.overflow = open ? 'hidden' : '';
+        };
+
+        menuToggle.addEventListener('click', () => {
+          const isOpen = mobileNav.classList.contains('is-open');
+          setMobileMenu(!isOpen);
+        });
+
+        mobileNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => setMobileMenu(false));
+        });
+
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && mobileNav.classList.contains('is-open')) {
+            setMobileMenu(false);
+            menuToggle.focus();
+          }
+        });
+
+        window.addEventListener('resize', () => {
+          if (window.innerWidth >= 960 && mobileNav.classList.contains('is-open')) {
+            setMobileMenu(false);
+          }
+        });
+
+        // 14. Animação de Contagem dos Números & Entrada Suave ao Rolar
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const metricEls = document.querySelectorAll('.metric-value[data-target]');
+        let metricsAnimated = false;
+
+        const runMetricCounters = () => {
+          if (metricsAnimated) return;
+          metricsAnimated = true;
+
+          metricEls.forEach((el) => {
+            const target = Number(el.getAttribute('data-target') || 0);
+            const suffix = el.getAttribute('data-suffix') || '';
+
+            if (prefersReducedMotion) {
+              el.textContent = `${target}${suffix}`;
+              return;
+            }
+
+            const duration = 1100;
+            const startTime = performance.now();
+
+            const step = (now) => {
+              const progress = Math.min((now - startTime) / duration, 1);
+              const eased = 1 - Math.pow(1 - progress, 3);
+              const current = Math.round(target * eased);
+              el.textContent = `${current}${suffix}`;
+              if (progress < 1) {
+                requestAnimationFrame(step);
+              }
+            };
+            requestAnimationFrame(step);
+          });
+        };
+
+        if ('IntersectionObserver' in window) {
+          if (credibilidade.length > 0) {
+            const metricsObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    runMetricCounters();
+                    metricsObserver.disconnect();
+                  }
+                });
+              },
+              { threshold: 0.3 }
+            );
+            metricsObserver.observe(metricsGrid);
+          }
+
+          const revealEls = document.querySelectorAll('.reveal');
+          if (prefersReducedMotion) {
+            revealEls.forEach((el) => el.classList.add('is-visible'));
+          } else {
+            const revealObserver = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    revealObserver.unobserve(entry.target);
+                  }
+                });
+              },
+              { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+            );
+            revealEls.forEach((el) => revealObserver.observe(el));
+          }
+        } else {
+          runMetricCounters();
+          document.querySelectorAll('.reveal').forEach((el) => el.classList.add('is-visible'));
+        }
+      })();
+    </script>
+  </body>
+</html>

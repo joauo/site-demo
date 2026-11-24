@@ -1,0 +1,8 @@
+{
+  "name": "Site demo",
+  "description": "Landing page editorial para corretor de imóveis autônomo de alto padrão, com portfólio curado e atendimento direto via WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
