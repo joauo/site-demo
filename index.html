@@ -6,7 +6,7 @@
     <title>Sua Marca | Atendimento Especializado</title>
     <meta
       name="description"
-      content="Atendimento profissional personalizado com foco em clareza, qualidade técnica e acompanhamento próximo do início ao resultado."
+      content="Atendimento profissional personalizado com foco em clareza, organização e acompanhamento próximo do primeiro contato ao resultado."
     />
     <meta name="robots" content="index, follow" />
 
@@ -17,7 +17,7 @@
     <meta property="og:title" content="Sua Marca | Atendimento Especializado" />
     <meta
       property="og:description"
-      content="Atendimento profissional personalizado com foco em clareza, qualidade técnica e acompanhamento próximo."
+      content="Atendimento profissional personalizado com foco em clareza, organização e acompanhamento próximo."
     />
 
     <!-- Twitter / X Cards -->
@@ -25,7 +25,7 @@
     <meta name="twitter:title" content="Sua Marca | Atendimento Especializado" />
     <meta
       name="twitter:description"
-      content="Atendimento profissional personalizado com foco em clareza, qualidade técnica e acompanhamento próximo."
+      content="Atendimento profissional personalizado com foco em clareza, organização e acompanhamento próximo."
     />
 
     <!-- Schema.org -->
@@ -42,38 +42,39 @@
     <link
       rel="icon"
       type="image/svg+xml"
+      id="site-favicon"
       href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230E5A6F'/%3E%3Ccircle cx='32' cy='32' r='12' fill='none' stroke='%23FFFFFF' stroke-width='4'/%3E%3C/svg%3E"
     />
 
-    <!-- Google Fonts: Sans-serif fortes para títulos + corpo legível -->
+    <!-- Google Fonts: Tipografia sans-serif forte e contemporânea -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <style>
       /* =====================================================================
-         VARIÁVEIS DE DESIGN (Atualizadas dinamicamente por preset)
+         VARIÁVEIS DE DESIGN (Editáveis via CONFIG.tema)
          ===================================================================== */
       :root {
         --bg-primary: #f6fafb;
-        --bg-surface: #ecf4f6;
+        --bg-surface: #ebf4f6;
         --bg-card: #ffffff;
         --accent: #0e5a6f;
-        --accent-hover: #0a4657;
+        --accent-hover: #0a4555;
         --accent-ink: #ffffff;
         --accent-soft: rgba(14, 90, 111, 0.1);
-        --text-primary: #0f242b;
-        --text-secondary: #415860;
-        --text-muted: #5d737b;
-        --border-subtle: rgba(15, 36, 43, 0.09);
-        --border-strong: rgba(15, 36, 43, 0.18);
-        --shadow-sm: 0 4px 14px rgba(15, 36, 43, 0.05);
-        --shadow-md: 0 14px 36px rgba(15, 36, 43, 0.09);
+        --text-primary: #121c24;
+        --text-secondary: #475569;
+        --text-muted: #64748b;
+        --border-subtle: rgba(15, 23, 42, 0.09);
+        --border-strong: rgba(15, 23, 42, 0.18);
+        --shadow-sm: 0 4px 14px rgba(15, 23, 42, 0.05);
+        --shadow-md: 0 14px 36px rgba(15, 23, 42, 0.09);
         --input-bg: #ffffff;
-        --error-bg: rgba(200, 45, 45, 0.1);
+        --error-bg: rgba(200, 45, 45, 0.09);
         --error-border: rgba(200, 45, 45, 0.35);
         --error-text: #9b1c1c;
         --font-display: 'Sora', 'Plus Jakarta Sans', sans-serif;
@@ -111,11 +112,6 @@
         background-color: var(--bg-primary);
         color: var(--text-primary);
         overflow-x: hidden;
-      }
-
-      img {
-        display: block;
-        max-width: 100%;
       }
 
       a {
@@ -182,15 +178,17 @@
       .display-heading {
         font-family: var(--font-display);
         font-weight: 700;
-        line-height: 1.12;
-        letter-spacing: -0.025em;
+        line-height: 1.24;
+        letter-spacing: -0.02em;
         color: var(--text-primary);
         text-wrap: balance;
+        overflow: visible;
       }
 
       .section-title {
-        font-size: clamp(1.875rem, 3.2vw, 2.75rem);
-        max-width: 24ch;
+        font-size: clamp(1.875rem, 3.1vw, 2.65rem);
+        max-width: 28ch;
+        overflow: visible;
       }
 
       .section-header {
@@ -198,6 +196,12 @@
         flex-direction: column;
         gap: 0.875rem;
         margin-bottom: 2.75rem;
+        overflow: visible;
+      }
+
+      .section-header > div {
+        min-width: 0;
+        overflow: visible;
       }
 
       @media (min-width: 900px) {
@@ -206,6 +210,14 @@
           align-items: flex-end;
           justify-content: space-between;
           gap: 2.5rem;
+        }
+
+        .section-header-split > div {
+          flex: 1 1 55%;
+        }
+
+        .section-header-split .section-lead {
+          flex: 0 1 42%;
         }
       }
 
@@ -276,22 +288,50 @@
         font-size: 0.875rem;
       }
 
-      .image-fallback {
-        position: absolute;
-        inset: 0;
-        display: none;
+      /* =====================================================================
+         PLACEHOLDERS ELEGANTES (Substituem todas as imagens)
+         ===================================================================== */
+      .media-placeholder {
+        width: 100%;
+        height: 100%;
+        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 0.75rem;
         padding: 1.5rem;
         text-align: center;
-        background: var(--bg-surface);
-        color: var(--text-secondary);
+        background: linear-gradient(
+          145deg,
+          color-mix(in srgb, var(--accent) 6%, var(--bg-card)) 0%,
+          color-mix(in srgb, var(--accent) 16%, var(--bg-surface)) 100%
+        );
+        border: 1.5px dashed color-mix(in srgb, var(--accent) 34%, transparent);
+        border-radius: inherit;
+        transition: border-color 220ms var(--ease-out-expo),
+          background 220ms var(--ease-out-expo),
+          transform 320ms var(--ease-out-expo);
       }
 
-      .image-fallback.is-visible {
-        display: flex;
+      .media-placeholder-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 14px;
+        background-color: color-mix(in srgb, var(--accent) 11%, var(--bg-card));
+        border: 1px solid color-mix(in srgb, var(--accent) 22%, transparent);
+        color: var(--accent);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .media-placeholder-label {
+        font-family: var(--font-display);
+        font-size: 0.9375rem;
+        font-weight: 600;
+        color: var(--accent);
+        letter-spacing: -0.01em;
       }
 
       /* =====================================================================
@@ -468,17 +508,17 @@
       }
 
       /* =====================================================================
-         2. HERO EM DUAS COLUNAS + FAIXA DE CONFIANÇA
+         2. HERO EM DUAS COLUNAS
          ===================================================================== */
       .hero {
-        padding-top: 6.75rem;
-        padding-bottom: 3.5rem;
+        padding-top: 7rem;
+        padding-bottom: 4rem;
       }
 
       @media (min-width: 1024px) {
         .hero {
-          padding-top: 8rem;
-          padding-bottom: 4.5rem;
+          padding-top: 8.25rem;
+          padding-bottom: 5rem;
         }
       }
 
@@ -497,10 +537,10 @@
       }
 
       .hero-title {
-        font-size: clamp(2.25rem, 4.1vw, 3.6rem);
-        line-height: 1.08;
+        font-size: clamp(2.25rem, 4vw, 3.5rem);
+        line-height: 1.15;
         margin-bottom: 1.25rem;
-        max-width: 17ch;
+        max-width: 18ch;
       }
 
       .hero-subtitle {
@@ -521,10 +561,7 @@
         position: relative;
         aspect-ratio: 4 / 3;
         border-radius: var(--radius-lg);
-        overflow: hidden;
-        background-color: var(--bg-surface);
         box-shadow: var(--shadow-md);
-        border: 1px solid var(--border-subtle);
       }
 
       @media (min-width: 960px) {
@@ -533,50 +570,8 @@
         }
       }
 
-      .hero-media-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-      }
-
-      .trust-strip {
-        margin-top: 3rem;
-        padding-top: 1.75rem;
-        border-top: 1px solid var(--border-subtle);
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 1rem 2rem;
-        font-size: 0.9375rem;
-        color: var(--text-secondary);
-      }
-
-      .trust-item {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-weight: 500;
-      }
-
-      .trust-item strong {
-        color: var(--text-primary);
-        font-weight: 700;
-      }
-
-      .trust-sep {
-        color: var(--border-strong);
-        display: none;
-      }
-
-      @media (min-width: 640px) {
-        .trust-sep {
-          display: inline;
-        }
-      }
-
       /* =====================================================================
-         3. NÚMEROS DE CREDIBILIDADE
+         3. NÚMEROS DE CREDIBILIDADE (Faixa única de cards, sem duplicação)
          ===================================================================== */
       .metrics-band {
         background-color: var(--bg-surface);
@@ -613,7 +608,7 @@
         font-family: var(--font-display);
         font-size: clamp(2.25rem, 3.6vw, 3rem);
         font-weight: 700;
-        line-height: 1.05;
+        line-height: 1.1;
         color: var(--accent);
       }
 
@@ -666,24 +661,16 @@
       .service-media {
         position: relative;
         aspect-ratio: 4 / 3;
-        background-color: var(--bg-surface);
-        overflow: hidden;
+        padding: 0.875rem 0.875rem 0;
+        border-radius: calc(var(--radius-md) - 4px);
       }
 
-      .service-media img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        transition: transform 420ms var(--ease-out-expo);
-      }
-
-      .service-card:hover .service-media img {
-        transform: scale(1.04);
+      .service-card:hover .service-media .media-placeholder {
+        border-color: color-mix(in srgb, var(--accent) 52%, transparent);
       }
 
       .service-body {
-        padding: 1.5rem;
+        padding: 1.375rem 1.5rem 1.5rem;
         display: flex;
         flex-direction: column;
         flex: 1;
@@ -729,7 +716,7 @@
       }
 
       /* =====================================================================
-         5. ANTES E DEPOIS COM SLIDER INTERATIVO (Quando aplicável)
+         5. ANTES E DEPOIS COM SLIDER INTERATIVO
          ===================================================================== */
       .ba-layout {
         display: grid;
@@ -751,7 +738,6 @@
         border-radius: var(--radius-lg);
         overflow: hidden;
         background-color: var(--bg-card);
-        border: 1px solid var(--border-subtle);
         box-shadow: var(--shadow-md);
         user-select: none;
         touch-action: pan-y;
@@ -760,19 +746,54 @@
       .ba-layer {
         position: absolute;
         inset: 0;
-        overflow: hidden;
+        border-radius: var(--radius-lg);
       }
 
-      .ba-layer img {
+      .ba-placeholder {
+        position: relative;
         width: 100%;
         height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        pointer-events: none;
+        border-radius: var(--radius-lg);
+        border: 1.5px dashed color-mix(in srgb, var(--accent) 34%, transparent);
       }
 
-      .ba-layer-before img {
-        filter: saturate(0.45) contrast(0.9) brightness(0.86);
+      .ba-placeholder-before {
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--accent) 4%, #eef3f5) 0%,
+          color-mix(in srgb, var(--accent) 10%, #dce7eb) 100%
+        );
+      }
+
+      .ba-placeholder-after {
+        background: linear-gradient(
+          135deg,
+          color-mix(in srgb, var(--accent) 11%, #ffffff) 0%,
+          color-mix(in srgb, var(--accent) 23%, #dff0f4) 100%
+        );
+      }
+
+      .ba-slot-badge {
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        text-align: center;
+        pointer-events: none;
+        padding: 0.75rem;
+        width: 44%;
+      }
+
+      .ba-slot-before {
+        left: 25%;
+      }
+
+      .ba-slot-after {
+        left: 75%;
       }
 
       .ba-layer-after {
@@ -785,8 +806,8 @@
         bottom: 0;
         left: 50%;
         width: 2px;
-        background-color: #ffffff;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+        background-color: var(--accent);
+        box-shadow: 0 0 12px rgba(14, 90, 111, 0.28);
         transform: translateX(-50%);
         pointer-events: none;
         z-index: 3;
@@ -803,7 +824,7 @@
         background-color: var(--accent);
         color: var(--accent-ink);
         border: 2px solid #ffffff;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+        box-shadow: 0 4px 16px rgba(15, 23, 42, 0.25);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -860,7 +881,7 @@
       }
 
       /* =====================================================================
-         6. GALERIA DE TRABALHOS & LIGHTBOX
+         6. GALERIA EM GRADE & LIGHTBOX
          ===================================================================== */
       .gallery-grid {
         display: grid;
@@ -898,31 +919,23 @@
         position: relative;
         width: 100%;
         aspect-ratio: 4 / 3;
-        overflow: hidden;
-        background-color: var(--bg-surface);
+        padding: 0.875rem 0.875rem 0;
+        border-radius: calc(var(--radius-md) - 4px);
       }
 
-      .gallery-thumb img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        transition: transform 420ms var(--ease-out-expo);
-      }
-
-      .gallery-item:hover .gallery-thumb img {
-        transform: scale(1.04);
+      .gallery-item:hover .gallery-thumb .media-placeholder {
+        border-color: color-mix(in srgb, var(--accent) 52%, transparent);
       }
 
       .gallery-zoom-hint {
         position: absolute;
-        right: 0.75rem;
-        bottom: 0.75rem;
-        width: 36px;
-        height: 36px;
+        right: 1.375rem;
+        bottom: 0.625rem;
+        width: 34px;
+        height: 34px;
         border-radius: 9999px;
-        background-color: rgba(15, 23, 30, 0.76);
-        color: #ffffff;
+        background-color: var(--accent);
+        color: var(--accent-ink);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -936,7 +949,7 @@
       }
 
       .gallery-caption {
-        padding: 1.125rem 1.25rem;
+        padding: 1.125rem 1.25rem 1.25rem;
       }
 
       .gallery-caption-title {
@@ -956,7 +969,7 @@
         position: fixed;
         inset: 0;
         z-index: 100;
-        background-color: rgba(9, 13, 18, 0.92);
+        background-color: rgba(9, 13, 18, 0.9);
         backdrop-filter: blur(8px);
         display: flex;
         align-items: center;
@@ -974,7 +987,7 @@
 
       .lightbox-dialog {
         width: 100%;
-        max-width: 920px;
+        max-width: 820px;
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -1011,19 +1024,12 @@
       }
 
       .lightbox-stage {
-        background-color: #0b0f14;
+        aspect-ratio: 4 / 3;
+        max-height: 68vh;
+        width: 100%;
         border-radius: var(--radius-md);
         overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        max-height: 72vh;
-      }
-
-      .lightbox-stage img {
-        width: 100%;
-        max-height: 72vh;
-        object-fit: contain;
+        background-color: var(--bg-primary);
       }
 
       .lightbox-footer {
@@ -1060,25 +1066,15 @@
         position: relative;
         aspect-ratio: 3 / 4;
         border-radius: var(--radius-lg);
-        overflow: hidden;
-        border: 1px solid var(--border-subtle);
-        background-color: var(--bg-surface);
         box-shadow: var(--shadow-md);
       }
 
       @media (min-width: 960px) {
         .about-portrait-wrap {
-          aspect-ratio: auto;
+          aspect-ratio: 3 / 4;
           min-height: 500px;
           height: 100%;
         }
-      }
-
-      .about-portrait-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
       }
 
       .about-content {
@@ -1308,7 +1304,7 @@
       }
 
       /* =====================================================================
-         11. CHAMADA FINAL & FORMULÁRIO WHATSAPP
+         11. CHAMADA FINAL, LOCALIZAÇÃO GENÉRICA & FORMULÁRIO WHATSAPP
          ===================================================================== */
       .contact-grid {
         display: grid;
@@ -1328,16 +1324,28 @@
         margin-top: 2rem;
         padding-top: 1.75rem;
         border-top: 1px solid var(--border-subtle);
-        display: flex;
-        flex-direction: column;
-        gap: 0.875rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
         font-size: 0.9375rem;
+      }
+
+      @media (min-width: 540px) {
+        .contact-direct {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 1.125rem 1.5rem;
+        }
+      }
+
+      .contact-direct-wide {
+        grid-column: 1 / -1;
       }
 
       .contact-direct-label {
         color: var(--text-muted);
         display: block;
         font-size: 0.8125rem;
+        margin-bottom: 0.15rem;
       }
 
       .contact-direct-link {
@@ -1348,6 +1356,12 @@
 
       .contact-direct-link:hover {
         color: var(--accent);
+      }
+
+      .contact-direct-text {
+        color: var(--text-primary);
+        font-weight: 500;
+        line-height: 1.55;
       }
 
       .contact-form-card {
@@ -1538,7 +1552,7 @@
         background-color: var(--accent);
         color: var(--accent-ink);
         border: 2px solid rgba(255, 255, 255, 0.25);
-        box-shadow: 0 10px 26px rgba(0, 0, 0, 0.24);
+        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.24);
         display: inline-flex;
         align-items: center;
         justify-content: center;
@@ -1559,6 +1573,7 @@
         transform: translateY(16px);
         transition: opacity 520ms var(--ease-out-expo),
           transform 520ms var(--ease-out-expo);
+        overflow: visible;
       }
 
       .reveal.is-visible {
@@ -1578,9 +1593,8 @@
         }
 
         .service-card,
-        .service-media img,
+        .media-placeholder,
         .gallery-item,
-        .gallery-thumb img,
         .btn,
         .floating-whatsapp {
           transition: none;
@@ -1665,7 +1679,7 @@
 
     <main>
       <!-- ===================================================================
-           2. HERO EM DUAS COLUNAS + FAIXA DE CONFIANÇA
+           2. HERO EM DUAS COLUNAS
            =================================================================== -->
       <section class="hero" id="inicio">
         <div class="container">
@@ -1686,25 +1700,13 @@
               </div>
             </div>
 
-            <div class="hero-media-card">
-              <img
-                id="hero-image"
-                alt="Profissional em atendimento"
-                referrerpolicy="no-referrer"
-                onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');"
-              />
-              <div class="image-fallback" aria-hidden="true">
-                <span class="display-heading" style="font-size: 1.35rem" id="hero-fallback-title"></span>
-              </div>
-            </div>
+            <div class="hero-media-card" id="hero-placeholder-slot"></div>
           </div>
-
-          <div class="trust-strip" id="trust-strip"></div>
         </div>
       </section>
 
       <!-- ===================================================================
-           3. NÚMEROS DE CREDIBILIDADE
+           3. NÚMEROS DE CREDIBILIDADE (Faixa única de cards)
            =================================================================== -->
       <section class="metrics-band" id="credibilidade-section" aria-label="Indicadores de atendimento">
         <div class="container">
@@ -1730,7 +1732,7 @@
       </section>
 
       <!-- ===================================================================
-           5. ANTES E DEPOIS COM SLIDER DE ARRASTAR (Quando aplicável)
+           5. ANTES E DEPOIS COM SLIDER INTERATIVO
            =================================================================== -->
       <section class="section section-surface" id="antes-depois">
         <div class="container">
@@ -1738,10 +1740,32 @@
             <div class="reveal">
               <div class="ba-stage" id="ba-stage">
                 <div class="ba-layer ba-layer-before">
-                  <img id="ba-img-before" alt="Estado inicial antes do acompanhamento" loading="lazy" referrerpolicy="no-referrer" />
+                  <div class="ba-placeholder ba-placeholder-before">
+                    <div class="ba-slot-badge ba-slot-before">
+                      <span class="media-placeholder-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="3" />
+                          <circle cx="8.5" cy="8.5" r="1.5" />
+                          <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                      </span>
+                      <span class="media-placeholder-label" id="ba-slot-label-before">Imagem antes</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="ba-layer ba-layer-after" id="ba-layer-after">
-                  <img id="ba-img-after" alt="Evolução após acompanhamento especializado" loading="lazy" referrerpolicy="no-referrer" />
+                  <div class="ba-placeholder ba-placeholder-after">
+                    <div class="ba-slot-badge ba-slot-after">
+                      <span class="media-placeholder-icon" aria-hidden="true">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                          <rect x="3" y="3" width="18" height="18" rx="3" />
+                          <circle cx="8.5" cy="8.5" r="1.5" />
+                          <polyline points="21 15 16 10 5 21" />
+                        </svg>
+                      </span>
+                      <span class="media-placeholder-label" id="ba-slot-label-after">Imagem depois</span>
+                    </div>
+                  </div>
                 </div>
                 <div class="ba-divider" id="ba-divider" aria-hidden="true">
                   <div class="ba-handle">
@@ -1758,7 +1782,7 @@
                   value="50"
                   class="ba-range"
                   id="ba-range"
-                  aria-label="Comparar antes e depois"
+                  aria-label="Comparar imagem antes e imagem depois"
                 />
               </div>
               <div class="ba-caption-bar">
@@ -1787,7 +1811,7 @@
       </section>
 
       <!-- ===================================================================
-           6. GALERIA DE TRABALHOS EM GRADE (Com ampliação ao clicar)
+           6. GALERIA EM GRADE (Com ampliação ao clicar)
            =================================================================== -->
       <section class="section" id="galeria">
         <div class="container">
@@ -1809,18 +1833,7 @@
       <section class="section section-surface" id="sobre">
         <div class="container">
           <div class="about-grid">
-            <div class="about-portrait-wrap reveal">
-              <img
-                id="about-image"
-                alt="Profissional responsável pelo atendimento"
-                referrerpolicy="no-referrer"
-                onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');"
-              />
-              <div class="image-fallback" id="about-image-fallback" aria-hidden="true">
-                <span class="display-heading" style="font-size: 1.4rem" id="about-fallback-profession"></span>
-                <span>Sua Marca</span>
-              </div>
-            </div>
+            <div class="about-portrait-wrap reveal" id="about-placeholder-slot"></div>
 
             <div class="about-content reveal">
               <p class="kicker" id="about-kicker"></p>
@@ -1884,7 +1897,7 @@
       </section>
 
       <!-- ===================================================================
-           11. CHAMADA FINAL & FORMULÁRIO PARA WHATSAPP
+           11. CHAMADA FINAL, LOCALIZAÇÃO GENÉRICA & FORMULÁRIO WHATSAPP
            =================================================================== -->
       <section class="section section-surface" id="contato">
         <div class="container">
@@ -1906,6 +1919,14 @@
                 <div>
                   <span class="contact-direct-label" id="contact-label-instagram"></span>
                   <a href="#" id="contact-instagram-link" target="_blank" rel="noopener noreferrer" class="contact-direct-link"></a>
+                </div>
+                <div>
+                  <span class="contact-direct-label" id="contact-label-schedule"></span>
+                  <span class="contact-direct-text" id="contact-schedule-text"></span>
+                </div>
+                <div class="contact-direct-wide">
+                  <span class="contact-direct-label" id="contact-label-location"></span>
+                  <span class="contact-direct-text" id="contact-location-text"></span>
                 </div>
               </div>
             </div>
@@ -1999,33 +2020,31 @@
       </div>
     </footer>
 
-    <!-- Lightbox da Galeria -->
+    <!-- Lightbox da Galeria (Sem fotos externas, exibe placeholder ampliado) -->
     <div class="lightbox" id="gallery-lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" aria-hidden="true">
       <div class="lightbox-dialog">
         <div class="lightbox-header">
           <span class="lightbox-counter tabular" id="lightbox-counter"></span>
-          <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fechar imagem ampliada">
+          <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Fechar visualização">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
               <line x1="18" y1="6" x2="6" y2="18" />
               <line x1="6" y1="6" x2="18" y2="18" />
             </svg>
           </button>
         </div>
-        <div class="lightbox-stage">
-          <img id="lightbox-img" src="" alt="" />
-        </div>
+        <div class="lightbox-stage" id="lightbox-stage"></div>
         <div class="lightbox-footer">
           <div>
             <div id="lightbox-title" style="font-weight: 600; font-size: 1rem"></div>
             <div id="lightbox-subtitle" style="font-size: 0.875rem; color: #cbd5e1"></div>
           </div>
           <div class="lightbox-nav">
-            <button type="button" class="lightbox-nav-btn" id="lightbox-prev" aria-label="Imagem anterior">
+            <button type="button" class="lightbox-nav-btn" id="lightbox-prev" aria-label="Item anterior">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <polyline points="15 18 9 12 15 6" />
               </svg>
             </button>
-            <button type="button" class="lightbox-nav-btn" id="lightbox-next" aria-label="Próxima imagem">
+            <button type="button" class="lightbox-nav-btn" id="lightbox-next" aria-label="Próximo item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <polyline points="9 18 15 12 9 6" />
               </svg>
@@ -2056,23 +2075,37 @@
     <script>
       /**
        * =========================================================================
-       * BLOCO DE CONFIGURAÇÃO EDITÁVEL
+       * CONFIGURAÇÃO EDITÁVEL DO SITE (Versão única e neutra)
        * =========================================================================
-       * Troque ACTIVE_PRESET para alternar o modelo completo:
-       * 'personal' | 'advogado' | 'estetica' | 'veterinaria' | 'clinica'
-       * Ou teste direto na URL com ?preset=personal (sem parâmetros de nome/cidade).
+       * Altere apenas os textos, cores e contatos abaixo para personalizar tudo.
        */
       const CONFIG = {
-        ACTIVE_PRESET: 'clinica',
-
         marca: 'Sua Marca',
+        profissao: 'Atendimento Especializado',
+
+        tema: {
+          corPrincipal: '#F6FAFB',
+          corSuperficie: '#EBF4F6',
+          corCard: '#FFFFFF',
+          corDestaque: '#0E5A6F',
+          corDestaqueHover: '#0A4555',
+          corDestaqueTexto: '#FFFFFF',
+          fonteTitulo: "'Sora', 'Plus Jakarta Sans', sans-serif"
+        },
 
         contato: {
           whatsapp: '5500000000000',
           whatsappExibicao: '(00) 00000-0000',
           instagram: '@seuperfil',
-          email: 'contato@seudominio.com'
+          email: 'contato@seudominio.com',
+          localizacaoTitulo: 'Localização',
+          localizacaoTexto: 'Atendimento presencial em local de fácil acesso ou à distância, conforme a necessidade.',
+          horariosTitulo: 'Horários',
+          horariosTexto: 'Horários flexíveis, mediante agendamento prévio.'
         },
+
+        whatsappMensagemPadrao:
+          'Olá! Visitei a página e gostaria de verificar horários disponíveis para atendimento.',
 
         rotulos: {
           nav: {
@@ -2093,16 +2126,16 @@
           },
           secoes: {
             servicos: {
-              sobretitulo: 'Especialidades e Atendimentos',
+              sobretitulo: 'Soluções e Serviços',
               titulo: 'Como posso ajudar você',
               subtitulo:
-                'Soluções estruturadas de acordo com a sua necessidade, com escopo claro e acompanhamento próximo.'
+                'Opções organizadas de forma clara para atender sua demanda com planejamento, agilidade e acompanhamento próximo.'
             },
             galeria: {
-              sobretitulo: 'Na Prática',
-              titulo: 'Rotina de atendimentos',
+              sobretitulo: 'Portfólio e Registros',
+              titulo: 'Destaques do atendimento',
               subtitulo:
-                'Registros reais do cuidado, da técnica aplicada e da proximidade em cada sessão.'
+                'Espaço reservado para apresentar exemplos reais do trabalho, entregas concluídas e bastidores do dia a dia.'
             },
             sobre: {
               sobretitulo: 'Sobre o Trabalho'
@@ -2111,19 +2144,19 @@
               sobretitulo: 'Passo a Passo',
               titulo: 'Como funciona o atendimento',
               subtitulo:
-                'Quatro etapas objetivas para garantir clareza, acolhimento e resultado do primeiro contato ao acompanhamento.'
+                'Quatro etapas objetivas para garantir clareza, organização e resultado do primeiro contato ao acompanhamento final.'
             },
             depoimentos: {
               sobretitulo: 'Avaliações',
               titulo: 'Experiência de quem já foi atendido',
               subtitulo:
-                'Relatos compartilhados por quem acompanhou o trabalho de perto.'
+                'Relatos compartilhados por clientes que acompanharam o trabalho de perto.'
             },
             faq: {
               sobretitulo: 'Perguntas Frequentes',
               titulo: 'Dúvidas comuns',
               subtitulo:
-                'Respostas diretas sobre agendamentos, formato das sessões e acompanhamento.'
+                'Respostas diretas sobre agendamentos, formato dos serviços e condições de atendimento.'
             },
             contato: {
               sobretitulo: 'Contato Direto',
@@ -2139,7 +2172,7 @@
               labelObjetivo: 'O que você procura?',
               labelMensagem: 'Mensagem rápida (opcional)',
               placeholderMensagem:
-                'Conte brevemente o que deseja resolver ou qual horário prefere.',
+                'Conte brevemente o que você precisa ou qual período prefere para atendimento.',
               confirmacaoSobretitulo: 'Tudo pronto',
               confirmacaoTitulo: 'Mensagem montada para o WhatsApp',
               confirmacaoSubtitulo:
@@ -2151,1072 +2184,213 @@
           }
         },
 
-        PRESETS: {
-          /* ------------------------------------------------------------------
-             1. PERSONAL TRAINER (Escuro · Verde-limão enérgico · Outfit)
-             ------------------------------------------------------------------ */
-          personal: {
-            tema: {
-              modo: 'escuro',
-              corPrincipal: '#0E1113',
-              corSuperficie: '#151A1E',
-              corCard: '#1B2126',
-              corDestaque: '#A3E635',
-              corDestaqueHover: '#BEF264',
-              corDestaqueTexto: '#0E1113',
-              fonteTitulo: "'Outfit', 'Plus Jakarta Sans', sans-serif"
-            },
-            profissao: 'Personal Trainer',
-            whatsappMensagemPadrao:
-              'Olá! Vi sua página e gostaria de agendar uma conversa sobre os treinos personalizados.',
-            hero: {
-              sobretitulo: 'Treinamento Personalizado',
-              titulo: 'Treinos sob medida para ganhar força, disposição e constância.',
-              subtitulo:
-                'Acompanhamento individualizado com técnica segura, progressão planejada e adaptação total à sua rotina semanal.',
-              ctaWhatsapp: 'Agendar avaliação',
-              ctaSecundario: 'Ver programas',
-              imagem: './src/assets/images/act_pers_hero_1795481806340.jpg',
-              imagemAlt: 'Personal trainer orientando aluno durante treino com halteres',
-              faixaConfianca: [
-                { destaque: '+600', texto: 'sessões acompanhadas' },
-                { destaque: 'Nota 4,9', texto: 'em satisfação' },
-                { destaque: '100%', texto: 'treino individualizado' }
-              ]
-            },
-            credibilidade: [
-              {
-                numero: 9,
-                sufixo: '+',
-                label: 'Anos de prática e orientação',
-                contexto: 'Força, hipertrofia e mobilidade'
-              },
-              {
-                numero: 180,
-                sufixo: '+',
-                label: 'Alunos acompanhados',
-                contexto: 'Atendimento presencial e online'
-              },
-              {
-                numero: 100,
-                sufixo: '%',
-                label: 'Planejamento sob medida',
-                contexto: 'Ajustado aos seus horários'
-              }
-            ],
-            servicos: [
-              {
-                categoria: 'Presencial',
-                nome: 'Treino Presencial Individual',
-                descricao:
-                  'Orientação lado a lado em cada série com correção postural, ritmo e progressão segura de cargas.',
-                preco: 'Sob consulta',
-                imagem: './src/assets/images/act_pers_run_1795481807386.jpg'
-              },
-              {
-                categoria: 'Performance',
-                nome: 'Condicionamento & Energia',
-                descricao:
-                  'Sessões dinâmicas focadas em resistência cardiovascular, queima calórica e disposição no dia a dia.',
-                preco: 'R$ 360 / mês',
-                imagem: './src/assets/images/act_pers_cardio_1795481975354.jpg'
-              },
-              {
-                categoria: 'Avaliação',
-                nome: 'Avaliação Física e Postural',
-                descricao:
-                  'Mapeamento de mobilidade, força e metas claras antes de iniciar qualquer ciclo de treinamento.',
-                preco: 'R$ 220',
-                imagem: './src/assets/images/act_pers_eval_1795481807188.jpg'
-              }
-            ],
-            antesDepois: {
-              sobretitulo: 'Evolução Real',
-              titulo: 'Constância que transforma postura e desempenho',
-              subtitulo:
-                'Arraste o comparador para visualizar a diferença entre treinar sem direção e evoluir com técnica acompanhada.',
-              imagemAntes: './src/assets/images/act_pers_run_1795481807386.jpg',
-              imagemDepois: './src/assets/images/act_pers_run_1795481807386.jpg',
-              labelAntes: 'Início sem direção',
-              labelDepois: 'Com acompanhamento',
-              ctaTexto: 'Quero começar meu plano',
-              pontos: [
-                {
-                  titulo: 'Postura e amplitude corretas',
-                  texto: 'Execução alinhada reduz sobrecargas articulares e acelera ganhos de força.'
-                },
-                {
-                  titulo: 'Progressão semanal medida',
-                  texto: 'Cargas, repetições e descanso ajustados conforme a sua resposta real.'
-                }
-              ]
-            },
-            galeria: [
-              {
-                imagem: './src/assets/images/act_pers_stretch_1795481806711.jpg',
-                titulo: 'Trabalho de mobilidade assistida',
-                legenda: 'Prevenção de desconfortos e ganho de amplitude'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_consult_1795479095679.jpg',
-                titulo: 'Alinhamento de rotina e objetivos',
-                legenda: 'Conversa inicial para adaptar o treino ao seu dia'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_guidance_1795481367585.jpg',
-                titulo: 'Revisão periódica de evolução',
-                legenda: 'Acompanhamento próximo em cada etapa do ciclo'
-              }
-            ],
-            sobre: {
-              titulo: 'Método direto, técnica precisa e constância possível na vida real.',
-              paragrafos: [
-                'O objetivo nunca foi passar treinos impossíveis que você abandona em três semanas, e sim construir um plano sólido que caiba na sua rotina.',
-                'Desde a primeira avaliação, analisamos histórico, mobilidade e disponibilidade para estruturar sessões eficientes e seguras.',
-                'Com acompanhamento próximo, cada conquista vira hábito sustentável para o corpo e para a mente.'
-              ],
-              diferenciais: [
-                {
-                  titulo: 'Correção em tempo real',
-                  texto: 'Cada repetição acompanhada com atenção à postura.'
-                },
-                {
-                  titulo: 'Zero planilhas genéricas',
-                  texto: 'Volume e intensidade desenhados para o seu momento.'
-                },
-                {
-                  titulo: 'Suporte no WhatsApp',
-                  texto: 'Ajustes rápidos diante de viagens ou imprevistos.'
-                },
-                {
-                  titulo: 'Metas mensuráveis',
-                  texto: 'Reavaliações periódicas de força e condicionamento.'
-                }
-              ],
-              imagem: './src/assets/images/act_pers_about_1795481807862.jpg',
-              imagemAlt: 'Personal trainer sorridente em estúdio de treinamento'
-            },
-            etapas: [
-              {
-                numero: '01',
-                titulo: 'Conversa inicial',
-                descricao: 'Entendemos seus objetivos, histórico físico e horários livres.'
-              },
-              {
-                numero: '02',
-                titulo: 'Avaliação prática',
-                descricao: 'Analisamos mobilidade, força de base e padrão de movimento.'
-              },
-              {
-                numero: '03',
-                titulo: 'Treino na prática',
-                descricao: 'Início das sessões com orientação próxima e progressão segura.'
-              },
-              {
-                numero: '04',
-                titulo: 'Ajustes contínuos',
-                descricao: 'Revisões periódicas para manter você evoluindo sem estagnar.'
-              }
-            ],
-            depoimentos: [
-              {
-                texto:
-                  'Pela primeira vez mantive regularidade nos treinos. Acabaram as dores no ombro e minha disposição mudou completamente.',
-                autor: 'Aluno satisfeito',
-                contexto: 'Treino Presencial'
-              },
-              {
-                texto:
-                  'A adaptação das séries para semanas corridas de trabalho me impediu de desistir. O acompanhamento faz toda a diferença.',
-                autor: 'Aluna recorrente',
-                contexto: 'Consultoria e Treino'
-              },
-              {
-                texto:
-                  'Explicação clara de cada movimento, pontualidade e evolução visível logo nos primeiros meses.',
-                autor: 'Cliente satisfeito',
-                contexto: 'Avaliação e Acompanhamento'
-              }
-            ],
-            faq: [
-              {
-                pergunta: 'Preciso já ter experiência na academia para começar?',
-                resposta:
-                  'Não. Tudo começa no seu ritmo atual, com ensino detalhado da postura e da execução desde o primeiro dia.'
-              },
-              {
-                pergunta: 'Quantas vezes por semana é ideal treinar?',
-                resposta:
-                  'Montamos protocolos eficientes a partir de 2 a 5 sessões semanais, respeitando sua agenda real.'
-              },
-              {
-                pergunta: 'E se eu viajar ou tiver uma semana corrida?',
-                resposta:
-                  'Adaptamos rapidamente os treinos para manter a constância mesmo fora da rotina habitual.'
-              },
-              {
-                pergunta: 'Como funciona a avaliação inicial?',
-                resposta:
-                  'Conversamos sobre seu histórico de saúde e fazemos testes simples de movimento e força para guiar o plano.'
-              },
-              {
-                pergunta: 'Como agendar uma conversa inicial?',
-                resposta:
-                  'Clique no botão de WhatsApp ou preencha o formulário no fim da página informando seus horários preferidos.'
-              }
-            ],
-            contatoFinal: {
-              titulo: 'Pronto para treinar com orientação e ver resultado de verdade?',
-              subtitulo:
-                'Envie seus objetivos e disponibilidade de horários para agendarmos sua avaliação inicial.'
-            }
-          },
+        hero: {
+          sobretitulo: 'Atendimento Personalizado',
+          titulo: 'Atendimento de qualidade, do primeiro contato ao resultado.',
+          subtitulo:
+            'Escuta atenta, planejamento claro e acompanhamento próximo para entregar soluções sob medida para a sua necessidade.',
+          ctaWhatsapp: 'Agendar atendimento',
+          ctaSecundario: 'Ver serviços',
+          placeholderTexto: 'Sua foto aqui'
+        },
 
-          /* ------------------------------------------------------------------
-             2. ADVOGADO (Azul-marinho e branco · Dourado discreto · Sora)
-             ------------------------------------------------------------------ */
-          advogado: {
-            tema: {
-              modo: 'claro',
-              corPrincipal: '#FFFFFF',
-              corSuperficie: '#F3F6FA',
-              corCard: '#FFFFFF',
-              corDestaque: '#0F274A',
-              corDestaqueHover: '#173A6E',
-              corDestaqueTexto: '#FFFFFF',
-              corAcentoKicker: '#9E782D',
-              fonteTitulo: "'Sora', 'Plus Jakarta Sans', sans-serif"
-            },
-            profissao: 'Advocacia e Consultoria Jurídica',
-            whatsappMensagemPadrao:
-              'Olá! Gostaria de agendar uma consulta jurídica reservada para esclarecer minha demanda.',
-            hero: {
-              sobretitulo: 'Advocacia Estratégica',
-              titulo: 'Segurança jurídica e orientação clara para suas decisões.',
-              subtitulo:
-                'Atendimento próximo e transparente para pessoas e empresas, transformando questões complexas em caminhos práticos e seguros.',
-              ctaWhatsapp: 'Agendar consulta',
-              ctaSecundario: 'Áreas de atuação',
-              imagem: './src/assets/images/act_adv_hero_1795481808022.jpg',
-              imagemAlt: 'Advogado reunido com cliente analisando documentos em escritório',
-              faixaConfianca: [
-                { destaque: '+450', texto: 'contratos e casos analisados' },
-                { destaque: 'Nota 5,0', texto: 'em avaliação de clientes' },
-                { destaque: '100%', texto: 'sigilo e condução direta' }
-              ]
-            },
-            credibilidade: [
-              {
-                numero: 14,
-                sufixo: '+',
-                label: 'Anos de atuação jurídica',
-                contexto: 'Consultivo e contencioso estratégico'
-              },
-              {
-                numero: 450,
-                sufixo: '+',
-                label: 'Pareceres e contratos revisados',
-                contexto: 'Prevenção de riscos e negociação'
-              },
-              {
-                numero: 100,
-                sufixo: '%',
-                label: 'Atendimento direto',
-                contexto: 'Sem repasse ou intermediários'
-              }
-            ],
-            servicos: [
-              {
-                categoria: 'Contratos',
-                nome: 'Análise e Redação Contratual',
-                descricao:
-                  'Revisão detalhada de cláusulas e elaboração de instrumentos sob medida para acordos comerciais e parcerias.',
-                preco: '',
-                imagem: './src/assets/images/act_adv_sign_1795481809593.jpg'
-              },
-              {
-                categoria: 'Consultivo',
-                nome: 'Assessoria Preventiva',
-                descricao:
-                  'Orientação jurídica antecipada para validar decisões patrimoniais, societárias e negociais com tranquilidade.',
-                preco: '',
-                imagem: './src/assets/images/act_adv_review_1795481808820.jpg'
-              },
-              {
-                categoria: 'Resolução',
-                nome: 'Mediação e Defesa Técnica',
-                descricao:
-                  'Atuação firme em negociações extrajudiciais e processos, com comunicação objetiva sobre prazos e cenários.',
-                preco: '',
-                imagem: './src/assets/images/act_adv_mediation_1795481976243.jpg'
-              }
-            ],
-            antesDepois: null,
-            galeria: [
-              {
-                imagem: './src/assets/images/act_adv_explain_1795481976443.jpg',
-                titulo: 'Explicação clara de cada cláusula',
-                legenda: 'Orientação sem juridiquês antes de qualquer assinatura'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_consult_1795479095679.jpg',
-                titulo: 'Reuniões reservadas e objetivas',
-                legenda: 'Escuta atenta para compreender todos os fatos do caso'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_guidance_1795481367585.jpg',
-                titulo: 'Organização documental precisa',
-                legenda: 'Preparo minucioso de estratégias e prazos'
-              }
-            ],
-            sobre: {
-              titulo: 'Rigor técnico, linguagem acessível e transparência em cada etapa.',
-              paragrafos: [
-                'Acredito que uma boa orientação jurídica começa antes de qualquer conflito: ouvir com atenção, revisar documentos com cuidado e explicar riscos de forma simples.',
-                'Sempre priorizamos caminhos preventivos e acordos bem desenhados, recorrendo ao contencioso quando realmente necessário para proteger seus interesses.',
-                'Do primeiro contato à conclusão da demanda, você acompanha cada passo diretamente com clareza total sobre andamento e condições.'
-              ],
-              diferenciais: [
-                {
-                  titulo: 'Comunicação sem juridiquês',
-                  texto: 'Diagnósticos diretos sobre riscos e alternativas reais.'
-                },
-                {
-                  titulo: 'Visão preventiva',
-                  texto: 'Contratos estruturados para evitar desgastes futuros.'
-                },
-                {
-                  titulo: 'Condução próxima',
-                  texto: 'Retorno ágil e relatórios claros em cada movimentação.'
-                },
-                {
-                  titulo: 'Sigilo absoluto',
-                  texto: 'Tratamento reservado de documentos e estratégias.'
-                }
-              ],
-              imagem: './src/assets/images/act_adv_about_1795481809200.jpg',
-              imagemAlt: 'Profissional da advocacia em escritório contemporâneo'
-            },
-            etapas: [
-              {
-                numero: '01',
-                titulo: 'Contato reservado',
-                descricao: 'Breve relato pelo WhatsApp para alinhamento de horário e contexto.'
-              },
-              {
-                numero: '02',
-                titulo: 'Consulta e análise',
-                descricao: 'Reunião presencial ou por vídeo para examinar documentos e cenários.'
-              },
-              {
-                numero: '03',
-                titulo: 'Estratégia definida',
-                descricao: 'Apresentação clara do plano de ação, prazos e proposta de trabalho.'
-              },
-              {
-                numero: '04',
-                titulo: 'Acompanhamento contínuo',
-                descricao: 'Execução técnica com atualizações objetivas em cada avanço.'
-              }
-            ],
-            depoimentos: [
-              {
-                texto:
-                  'A revisão do nosso contrato evitou um prejuízo enorme e trouxe tranquilidade para fechar a parceria com segurança.',
-                autor: 'Cliente satisfeito',
-                contexto: 'Consultoria Contratual'
-              },
-              {
-                texto:
-                  'Recebi explicações objetivas em todas as etapas, sem termos complicados e sempre com respostas rápidas.',
-                autor: 'Cliente recorrente',
-                contexto: 'Assessoria Preventiva'
-              },
-              {
-                texto:
-                  'Conseguimos resolver uma negociação delicada por acordo, poupando tempo, custo e desgaste.',
-                autor: 'Empresário atendido',
-                contexto: 'Mediação de Acordo'
-              }
-            ],
-            faq: [
-              {
-                pergunta: 'O atendimento pode ser feito online por videoconferência?',
-                resposta:
-                  'Sim. Realizamos reuniões online com o mesmo sigilo e profundidade do atendimento presencial.'
-              },
-              {
-                pergunta: 'Como funciona a primeira consulta?',
-                resposta:
-                  'Ouvimos o contexto da situação, analisamos os principais documentos e apontamos os caminhos jurídicos recomendados.'
-              },
-              {
-                pergunta: 'Quais documentos preciso separar antes da reunião?',
-                resposta:
-                  'Após o agendamento pelo WhatsApp, informamos exatamente quais arquivos ajudam na análise inicial.'
-              },
-              {
-                pergunta: 'Como são combinados os honorários?',
-                resposta:
-                  'Os valores variam conforme a complexidade da demanda e são sempre apresentados previamente por escrito.'
-              },
-              {
-                pergunta: 'Em quanto tempo recebo retorno após enviar mensagem?',
-                resposta:
-                  'As solicitações recebidas em horário útil são respondidas no mesmo dia para definirmos o melhor horário.'
-              }
-            ],
-            contatoFinal: {
-              titulo: 'Precisa de orientação jurídica segura antes de tomar uma decisão?',
-              subtitulo:
-                'Envie uma mensagem para agendar uma consulta reservada e analisar seu caso com clareza.'
-            }
+        credibilidade: [
+          {
+            numero: 10,
+            sufixo: '+',
+            label: 'Anos de experiência',
+            contexto: 'Atuação sólida e dedicada'
           },
-
-          /* ------------------------------------------------------------------
-             3. ESTETICISTA E SALÃO (Claro · Rosé e areia · Delicado · Plus Jakarta Sans)
-             ------------------------------------------------------------------ */
-          estetica: {
-            tema: {
-              modo: 'claro',
-              corPrincipal: '#FCF8F6',
-              corSuperficie: '#F5ECE8',
-              corCard: '#FFFFFF',
-              corDestaque: '#A85C60',
-              corDestaqueHover: '#8E494D',
-              corDestaqueTexto: '#FFFFFF',
-              fonteTitulo: "'Plus Jakarta Sans', sans-serif"
-            },
-            profissao: 'Estética & Beleza',
-            whatsappMensagemPadrao:
-              'Olá! Gostaria de consultar horários disponíveis e saber mais sobre os tratamentos.',
-            hero: {
-              sobretitulo: 'Estética Facial & Cuidado Pessoal',
-              titulo: 'Realce natural para sua pele com técnica suave e acolhimento.',
-              subtitulo:
-                'Protocolos personalizados de cuidados faciais, sobrancelhas e bem-estar feitos sem pressa para respeitar a beleza do seu rosto.',
-              ctaWhatsapp: 'Agendar horário',
-              ctaSecundario: 'Ver tratamentos',
-              imagem: './src/assets/images/act_est_hero_1795481809822.jpg',
-              imagemAlt: 'Esteticista realizando procedimento facial delicado em cliente',
-              faixaConfianca: [
-                { destaque: '+900', texto: 'atendimentos personalizados' },
-                { destaque: 'Nota 5,0', texto: 'em avaliação das clientes' },
-                { destaque: '100%', texto: 'resultados naturais' }
-              ]
-            },
-            credibilidade: [
-              {
-                numero: 11,
-                sufixo: '+',
-                label: 'Anos em estética e visagismo',
-                contexto: 'Protocolos suaves e atualizados'
-              },
-              {
-                numero: 950,
-                sufixo: '+',
-                label: 'Sessões realizadas',
-                contexto: 'Atendimento individual com hora marcada'
-              },
-              {
-                numero: 100,
-                sufixo: '%',
-                label: 'Ativos selecionados',
-                contexto: 'Segurança para todos os tipos de pele'
-              }
-            ],
-            servicos: [
-              {
-                categoria: 'Facial',
-                nome: 'Hidratação & Revitalização Glow',
-                descricao:
-                  'Aplicação de ativos calmantes e hidratantes com séruns concentrados para viço imediato e pele macia.',
-                preco: 'R$ 320',
-                imagem: './src/assets/images/act_est_serum_1795481809469.jpg'
-              },
-              {
-                categoria: 'Tratamento',
-                nome: 'Limpeza Profunda & Máscara Botânica',
-                descricao:
-                  'Higienização delicada, desobstrução dos poros sem marcas e máscara calmante restauradora.',
-                preco: 'R$ 260',
-                imagem: './src/assets/images/act_est_mask_1795481809410.jpg'
-              },
-              {
-                categoria: 'Olhar',
-                nome: 'Design de Sobrancelhas & Alinhamento',
-                descricao:
-                  'Mapeamento proporcional aos traços do rosto para valorizar o olhar com naturalidade e leveza.',
-                preco: 'R$ 150',
-                imagem: './src/assets/images/act_est_brow_1795481902590.jpg'
-              }
-            ],
-            antesDepois: {
-              sobretitulo: 'Antes e Depois',
-              titulo: 'Pele revitalizada logo após o protocolo',
-              subtitulo:
-                'Arraste a barra para comparar o aspecto opaco e cansado com a luminosidade obtida após hidratação profunda.',
-              imagemAntes: './src/assets/images/act_est_serum_1795481809469.jpg',
-              imagemDepois: './src/assets/images/act_est_serum_1795481809469.jpg',
-              labelAntes: 'Antes da sessão',
-              labelDepois: 'Pós-protocolo',
-              ctaTexto: 'Quero agendar minha sessão',
-              pontos: [
-                {
-                  titulo: 'Viço imediato sem vermelhidão',
-                  texto: 'Ativos calmantes que devolvem maciez sem exigir tempo de recuperação.'
-                },
-                {
-                  titulo: 'Textura uniforme e hidratada',
-                  texto: 'Barreira cutânea fortalecida para manter a pele saudável por semanas.'
-                }
-              ]
-            },
-            galeria: [
-              {
-                imagem: './src/assets/images/act_est_massage_1795481974954.jpg',
-                titulo: 'Drenagem e massagem facial relaxante',
-                legenda: 'Manobras suaves para aliviar tensão e inchaço'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_consult_1795479095679.jpg',
-                titulo: 'Avaliação individual antes da sessão',
-                legenda: 'Escolha dos ativos certos para o seu momento'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_guidance_1795481367585.jpg',
-                titulo: 'Guia simples de cuidados em casa',
-                legenda: 'Orientações práticas para manter o resultado diário'
-              }
-            ],
-            sobre: {
-              titulo: 'Beleza sem exageros: cuidado delicado, técnica segura e pausa para você.',
-              paragrafos: [
-                'Cada atendimento nasce da escuta do que você deseja ver no espelho: pele saudável, expressão descansada e traços valorizados sem artificialidade.',
-                'Antes de aplicar qualquer produto, avaliamos a sensibilidade e a necessidade real da sua pele naquele dia.',
-                'Tudo acontece com calma, higiene rigorosa e foco em fazer você sair renovada para a sua rotina.'
-              ],
-              diferenciais: [
-                {
-                  titulo: 'Avaliação da pele inclusa',
-                  texto: 'Protocolo adaptado ao estado atual da pele em cada visita.'
-                },
-                {
-                  titulo: 'Mãos leves e sem marcas',
-                  texto: 'Técnicas suaves pensadas para conforto total.'
-                },
-                {
-                  titulo: 'Atendimento exclusivo',
-                  texto: 'Uma cliente por horário, sem espera nem correria.'
-                },
-                {
-                  titulo: 'Rotina em casa clara',
-                  texto: 'Dicas objetivas para prolongar os efeitos em casa.'
-                }
-              ],
-              imagem: './src/assets/images/act_est_about_1795481902836.jpg',
-              imagemAlt: 'Especialista em estética sorrindo no espaço de atendimento'
-            },
-            etapas: [
-              {
-                numero: '01',
-                titulo: 'Reserva no WhatsApp',
-                descricao: 'Escolha do tratamento e do melhor horário na agenda.'
-              },
-              {
-                numero: '02',
-                titulo: 'Análise da pele',
-                descricao: 'Avaliação tátil e visual antes de selecionar os ativos ideais.'
-              },
-              {
-                numero: '03',
-                titulo: 'Sessão acolhedora',
-                descricao: 'Procedimento realizado com calma, precisão e toque relaxante.'
-              },
-              {
-                numero: '04',
-                titulo: 'Dicas pós-sessão',
-                descricao: 'Orientações simples de manutenção diária e retorno sugerido.'
-              }
-            ],
-            depoimentos: [
-              {
-                texto:
-                  'Saí com a pele iluminada e sem nenhuma marca. A delicadeza durante todo o atendimento é um diferencial raro.',
-                autor: 'Cliente satisfeita',
-                contexto: 'Hidratação & Limpeza'
-              },
-              {
-                texto:
-                  'Meu design de sobrancelhas ficou super natural, exatamente no formato que combina com meu rosto.',
-                autor: 'Cliente recorrente',
-                contexto: 'Design de Sobrancelhas'
-              },
-              {
-                texto:
-                  'Sempre saio me sentindo descansada e bem cuidada. Pontualidade e carinho em cada detalhe.',
-                autor: 'Cliente fiel',
-                contexto: 'Protocolo Facial'
-              }
-            ],
-            faq: [
-              {
-                pergunta: 'Como saber qual procedimento é melhor para minha pele?',
-                resposta:
-                  'No início do atendimento fazemos uma avaliação breve para indicar o cuidado que traz melhor resultado para você.'
-              },
-              {
-                pergunta: 'A limpeza de pele deixa o rosto vermelho?',
-                resposta:
-                  'Não. Trabalhamos com emoliência suave e máscara calmante finalizadora para você seguir o dia normalmente.'
-              },
-              {
-                pergunta: 'Posso agendar se estiver usando ácidos em casa?',
-                resposta:
-                  'Sim, basta avisar pelo WhatsApp ao marcar para orientarmos a pausa correta alguns dias antes.'
-              },
-              {
-                pergunta: 'Quanto tempo dura cada sessão?',
-                resposta:
-                  'Em média de 50 a 80 minutos, dependendo do protocolo escolhido.'
-              },
-              {
-                pergunta: 'Como remarcar se surgir algum imprevisto?',
-                resposta:
-                  'Basta enviar uma mensagem com antecedência pelo WhatsApp para ajustarmos seu horário.'
-              }
-            ],
-            contatoFinal: {
-              titulo: 'Vamos reservar o seu horário de autocuidado?',
-              subtitulo:
-                'Mande uma mensagem para consultar os próximos horários ou tirar dúvidas sobre os tratamentos.'
-            }
+          {
+            numero: 500,
+            sufixo: '+',
+            label: 'Clientes atendidos',
+            contexto: 'Atendimento próximo e organizado'
           },
-
-          /* ------------------------------------------------------------------
-             4. VETERINÁRIA (Claro · Verde-turquesa acolhedor · Outfit)
-             ------------------------------------------------------------------ */
-          veterinaria: {
-            tema: {
-              modo: 'claro',
-              corPrincipal: '#F3FAF8',
-              corSuperficie: '#E5F4F0',
-              corCard: '#FFFFFF',
-              corDestaque: '#0D7A6F',
-              corDestaqueHover: '#095F56',
-              corDestaqueTexto: '#FFFFFF',
-              fonteTitulo: "'Outfit', 'Plus Jakarta Sans', sans-serif"
-            },
-            profissao: 'Clínica Veterinária',
-            whatsappMensagemPadrao:
-              'Olá! Gostaria de agendar uma consulta ou tirar uma dúvida sobre meu pet.',
-            hero: {
-              sobretitulo: 'Cuidado Veterinário Gentil',
-              titulo: 'Carinho, calma e precisão para a saúde do seu pet.',
-              subtitulo:
-                'Consultas preventivas, vacinação e acompanhamento clínico com manejo gentil para cães e gatos se sentirem seguros.',
-              ctaWhatsapp: 'Agendar consulta',
-              ctaSecundario: 'Ver serviços',
-              imagem: './src/assets/images/act_vet_hero_1795481810257.jpg',
-              imagemAlt: 'Veterinária examinando cachorro golden retriever com estetoscópio',
-              faixaConfianca: [
-                { destaque: '+2.000', texto: 'pets cuidados com carinho' },
-                { destaque: 'Nota 4,9', texto: 'entre tutores' },
-                { destaque: '100%', texto: 'manejo de baixo estresse' }
-              ]
-            },
-            credibilidade: [
-              {
-                numero: 10,
-                sufixo: '+',
-                label: 'Anos cuidando de cães e gatos',
-                contexto: 'Medicina preventiva e clínica geral'
-              },
-              {
-                numero: 2400,
-                sufixo: '+',
-                label: 'Consultas realizadas com calma',
-                contexto: 'Atendimento sem pressa e acolhedor'
-              },
-              {
-                numero: 100,
-                sufixo: '%',
-                label: 'Horários agendados',
-                contexto: 'Sem espera tensa na recepção'
-              }
-            ],
-            servicos: [
-              {
-                categoria: 'Felinos',
-                nome: 'Consulta Acolhedora para Gatos',
-                descricao:
-                  'Exame completo com manejo silencioso e paciente, respeitando o tempo e o comportamento do felino.',
-                preco: 'R$ 220',
-                imagem: './src/assets/images/act_vet_cat_1795481903468.jpg'
-              },
-              {
-                categoria: 'Cães & Filhotes',
-                nome: 'Check-up e Vacinação Segura',
-                descricao:
-                  'Avaliação clínica minuciosa antes de cada vacina e guia prático de cuidados para todas as idades.',
-                preco: 'A partir de R$ 130',
-                imagem: './src/assets/images/act_vet_puppy_1795481810909.jpg'
-              },
-              {
-                categoria: 'Orientação',
-                nome: 'Acompanhamento junto ao Tutor',
-                descricao:
-                  'Explicação clara de exames, prevenção e rotina de bem-estar para o seu pet viver mais e melhor.',
-                preco: 'Sob consulta',
-                imagem: './src/assets/images/act_vet_owner_1795481903293.jpg'
-              }
-            ],
-            antesDepois: null,
-            galeria: [
-              {
-                imagem: './src/assets/images/act_vet_checkup_1795481975713.jpg',
-                titulo: 'Aproximação amigável e sem medo',
-                legenda: 'Reforço positivo para deixar o pet confortável'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_consult_1795479095679.jpg',
-                titulo: 'Conversa transparente com tutores',
-                legenda: 'Esclarecimento de dúvidas e opções de cuidado'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_guidance_1795481367585.jpg',
-                titulo: 'Plano preventivo organizado',
-                legenda: 'Lembretes de vacinas e retornos em dia'
-              }
-            ],
-            sobre: {
-              titulo: 'Medicina veterinária acolhedora, transparente e livre de estresse.',
-              paragrafos: [
-                'Sabemos o quanto uma ida ao veterinário pode deixar cães, gatos e tutores apreensivos. Por isso, cada consulta acontece em ritmo calmo, sem correria.',
-                'Explicamos cada detalhe do exame e das recomendações de forma clara para que você cuide do seu companheiro em casa com segurança.',
-                'Nosso foco é prevenir desconfortos antes que se tornem problemas sérios e acompanhar toda a vida do seu pet com carinho.'
-              ],
-              diferenciais: [
-                {
-                  titulo: 'Manejo gentil',
-                  texto: 'Respeito ao ritmo e temperamento de cada cão ou gato.'
-                },
-                {
-                  titulo: 'Sem espera longa',
-                  texto: 'Horários espaçados para evitar encontros estressantes.'
-                },
-                {
-                  titulo: 'Orientações escritas',
-                  texto: 'Receitas e cuidados detalhados de forma simples.'
-                },
-                {
-                  titulo: 'Apoio pós-consulta',
-                  texto: 'Canal aberto no WhatsApp para acompanhar a recuperação.'
-                }
-              ],
-              imagem: './src/assets/images/act_vet_about_1795481904407.jpg',
-              imagemAlt: 'Veterinária sorrindo com estetoscópio durante plantão'
-            },
-            etapas: [
-              {
-                numero: '01',
-                titulo: 'Agendamento prático',
-                descricao: 'Escolha do horário pelo WhatsApp com dicas para um trajeto calmo.'
-              },
-              {
-                numero: '02',
-                titulo: 'Consulta sem pressa',
-                descricao: 'Avaliação física completa respeitando o tempo de adaptação do pet.'
-              },
-              {
-                numero: '03',
-                titulo: 'Plano de cuidados',
-                descricao: 'Explicação clara de vacinas, exames ou tratamento em casa.'
-              },
-              {
-                numero: '04',
-                titulo: 'Retorno atencioso',
-                descricao: 'Contato após a consulta para saber como o pet está evoluindo.'
-              }
-            ],
-            depoimentos: [
-              {
-                texto:
-                  'Minha gata sempre ficava assustada em consultas, mas aqui foi examinada com tanta paciência que ficou super tranquila.',
-                autor: 'Tutora satisfeita',
-                contexto: 'Consulta Felina'
-              },
-              {
-                texto:
-                  'Explicaram cada detalhe dos exames e continuaram acompanhando pelo WhatsApp durante toda a recuperação.',
-                autor: 'Tutor satisfeito',
-                contexto: 'Acompanhamento Clínico'
-              },
-              {
-                texto:
-                  'Pontualidade, cuidado genuíno com os animais e muita clareza para responder nossas dúvidas.',
-                autor: 'Cliente recorrente',
-                contexto: 'Vacinação e Check-up'
-              }
-            ],
-            faq: [
-              {
-                pergunta: 'Vocês atendem tanto cães quanto gatos?',
-                resposta:
-                  'Sim. Temos cuidado específico de manejo para respeitar as necessidades de cães e felinos.'
-              },
-              {
-                pergunta: 'É preciso agendar horário antes?',
-                resposta:
-                  'Sim, o agendamento prévio garante sala preparada e evita aglomeração de outros animais.'
-              },
-              {
-                pergunta: 'O que levar na primeira consulta?',
-                resposta:
-                  'Traga a carteirinha de vacinação, informações sobre alimentação e exames recentes, se tiver.'
-              },
-              {
-                pergunta: 'Vocês dão dicas para transportar gatos assustados?',
-                resposta:
-                  'Sim! Ao confirmar o horário enviamos orientações simples para tornar a caixa de transporte mais confortável.'
-              },
-              {
-                pergunta: 'Como agendar ou tirar uma dúvida rápida?',
-                resposta:
-                  'Chame no WhatsApp ou preencha o formulário abaixo contando se é cão ou gato e o que você precisa.'
-              }
-            ],
-            contatoFinal: {
-              titulo: 'Quer agendar uma consulta tranquila para o seu pet?',
-              subtitulo:
-                'Conte brevemente o que ele precisa e encontre o melhor horário na nossa agenda.'
-            }
-          },
-
-          /* ------------------------------------------------------------------
-             5. CLÍNICA (Claro · Azul-petróleo e branco · Sora)
-             ------------------------------------------------------------------ */
-          clinica: {
-            tema: {
-              modo: 'claro',
-              corPrincipal: '#F6FAFB',
-              corSuperficie: '#EBF4F6',
-              corCard: '#FFFFFF',
-              corDestaque: '#0E5A6F',
-              corDestaqueHover: '#0A4555',
-              corDestaqueTexto: '#FFFFFF',
-              fonteTitulo: "'Sora', 'Plus Jakarta Sans', sans-serif"
-            },
-            profissao: 'Clínica Integrada',
-            whatsappMensagemPadrao:
-              'Olá! Gostaria de verificar horários disponíveis e agendar minha consulta.',
-            hero: {
-              sobretitulo: 'Atendimento Clínico Humanizado',
-              titulo: 'Cuidado preciso, humano e sem pressa para sua saúde.',
-              subtitulo:
-                'Consultas com escuta dedicada, diagnóstico claro e acompanhamento próximo para você entender cada passo do seu cuidado.',
-              ctaWhatsapp: 'Agendar consulta',
-              ctaSecundario: 'Ver atendimentos',
-              imagem: './src/assets/images/act_clin_hero_1795481903794.jpg',
-              imagemAlt: 'Profissional da saúde conversando com paciente sorridente em consultório',
-              faixaConfianca: [
-                { destaque: '+1.800', texto: 'pacientes acompanhados' },
-                { destaque: 'Nota 4,9', texto: 'em avaliação média' },
-                { destaque: '60 min', texto: 'de consulta sem pressa' }
-              ]
-            },
-            credibilidade: [
-              {
-                numero: 12,
-                sufixo: '+',
-                label: 'Anos de prática clínica',
-                contexto: 'Prevenção e saúde integral'
-              },
-              {
-                numero: 1800,
-                sufixo: '+',
-                label: 'Pacientes atendidos',
-                contexto: 'Consultas e acompanhamentos'
-              },
-              {
-                numero: 60,
-                sufixo: ' min',
-                label: 'Tempo dedicado por consulta',
-                contexto: 'Pontualidade e escuta ativa'
-              }
-            ],
-            servicos: [
-              {
-                categoria: 'Avaliação',
-                nome: 'Consulta Clínica Completa',
-                descricao:
-                  'Escuta atenta do histórico de saúde, avaliação física cuidadosa e orientação clara sobre os próximos passos.',
-                preco: 'R$ 480',
-                imagem: './src/assets/images/act_clin_care_1795481976486.jpg'
-              },
-              {
-                categoria: 'Acompanhamento',
-                nome: 'Plano de Saúde e Bem-Estar',
-                descricao:
-                  'Leitura integrada de exames, energia diária, sono e metas práticas acompanhadas passo a passo.',
-                preco: 'R$ 620',
-                imagem: './src/assets/images/act_clin_tablet_1795481904258.jpg'
-              },
-              {
-                categoria: 'Prevenção',
-                nome: 'Check-up e Revisão Periódica',
-                descricao:
-                  'Monitoramento preventivo de indicadores essenciais para manter equilíbrio e qualidade de vida.',
-                preco: 'Sob consulta',
-                imagem: './src/assets/images/act_clin_checkup_1795481977464.jpg'
-              }
-            ],
-            antesDepois: {
-              sobretitulo: 'Acompanhamento Contínuo',
-              titulo: 'Da incerteza à clareza em cada resultado',
-              subtitulo:
-                'Arraste o comparador para entender a diferença de um acompanhamento pontual para um cuidado contínuo com metas claras.',
-              imagemAntes: './src/assets/images/act_clin_care_1795481976486.jpg',
-              imagemDepois: './src/assets/images/act_clin_care_1795481976486.jpg',
-              labelAntes: 'Exames isolados',
-              labelDepois: 'Cuidado integrado',
-              ctaTexto: 'Agendar minha consulta',
-              pontos: [
-                {
-                  titulo: 'Tempo real para tirar dúvidas',
-                  texto: 'Você sai da consulta compreendendo exatamente o motivo de cada conduta.'
-                },
-                {
-                  titulo: 'Prevenção antes dos sintomas',
-                  texto: 'Acompanhamento periódico que antecipa ajustes simples de rotina.'
-                }
-              ]
-            },
-            galeria: [
-              {
-                imagem: './src/assets/images/act_clin_team_1795481977329.jpg',
-                titulo: 'Acolhimento pontual na chegada',
-                legenda: 'Recepção calma sem filas nem espera prolongada'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_consult_1795479095679.jpg',
-                titulo: 'Escuta dedicada em cada consulta',
-                legenda: 'Conversa aberta para compreender sua rotina real'
-              },
-              {
-                imagem: './src/assets/images/neutral_srv_guidance_1795481367585.jpg',
-                titulo: 'Orientações organizadas por escrito',
-                legenda: 'Resumo claro para seguir com tranquilidade em casa'
-              }
-            ],
-            sobre: {
-              titulo: 'Atendimento próximo, com tempo de verdade para ouvir você.',
-              paragrafos: [
-                'Estruturamos cada atendimento para ir na contramão das consultas apressadas: você tem espaço para contar sua história e entender cada recomendação.',
-                'Analisamos exames, hábitos de sono, alimentação e rotina para construir condutas possíveis e baseadas em evidências.',
-                'Nosso compromisso é caminhar junto com você do agendamento ao retorno pós-consulta.'
-              ],
-              diferenciais: [
-                {
-                  titulo: 'Consultas de 60 minutos',
-                  texto: 'Tempo adequado para avaliação completa e sem correria.'
-                },
-                {
-                  titulo: 'Conduta personalizada',
-                  texto: 'Recomendações desenhadas para a sua realidade.'
-                },
-                {
-                  titulo: 'Pontualidade garantida',
-                  texto: 'Agenda espaçada para respeitar o seu horário.'
-                },
-                {
-                  titulo: 'Canal pós-consulta',
-                  texto: 'Suporte para dúvidas ao longo do acompanhamento.'
-                }
-              ],
-              imagem: './src/assets/images/act_clin_about_1795481904230.jpg',
-              imagemAlt: 'Especialista de saúde sorrindo em consultório clínico'
-            },
-            etapas: [
-              {
-                numero: '01',
-                titulo: 'Agendamento simples',
-                descricao: 'Escolha do melhor horário pelo WhatsApp com confirmação rápida.'
-              },
-              {
-                numero: '02',
-                titulo: 'Escuta e avaliação',
-                descricao: 'Consulta detalhada sobre sintomas, histórico e rotina diária.'
-              },
-              {
-                numero: '03',
-                titulo: 'Plano compreensível',
-                descricao: 'Definição clara de exames, metas e orientações por escrito.'
-              },
-              {
-                numero: '04',
-                titulo: 'Retorno e ajustes',
-                descricao: 'Revisão dos resultados e acompanhamento contínuo da evolução.'
-              }
-            ],
-            depoimentos: [
-              {
-                texto:
-                  'A calma para explicar cada exame e a pontualidade desde a recepção fizeram toda a diferença no meu atendimento.',
-                autor: 'Paciente',
-                contexto: 'Consulta Clínica'
-              },
-              {
-                texto:
-                  'Pela primeira vez saí de uma consulta entendendo exatamente cada passo do meu plano de cuidado.',
-                autor: 'Paciente satisfeito',
-                contexto: 'Check-up Preventivo'
-              },
-              {
-                texto:
-                  'Atendimento humano, acolhedor e retorno atencioso após o envio dos resultados dos exames.',
-                autor: 'Paciente recorrente',
-                contexto: 'Acompanhamento Contínuo'
-              }
-            ],
-            faq: [
-              {
-                pergunta: 'Como funciona a primeira consulta?',
-                resposta:
-                  'Reservamos cerca de uma hora para ouvir seu histórico completo, avaliar exames anteriores e traçar um plano claro.'
-              },
-              {
-                pergunta: 'Costuma haver atraso na recepção?',
-                resposta:
-                  'Não. Trabalhamos com intervalos planejados entre pacientes justamente para cumprir os horários marcados.'
-              },
-              {
-                pergunta: 'Devo levar exames realizados recentemente?',
-                resposta:
-                  'Sim, se tiver exames dos últimos 12 meses vale trazê-los ou enviá-los antes da consulta.'
-              },
-              {
-                pergunta: 'Há emissão de nota ou recibo para reembolso?',
-                resposta:
-                  'Sim, fornecemos documentação completa para você solicitar reembolso junto ao seu plano, quando aplicável.'
-              },
-              {
-                pergunta: 'Como faço para agendar ou remarcar?',
-                resposta:
-                  'Todo o contato de agenda é feito diretamente pelo WhatsApp de forma rápida e prática.'
-              }
-            ],
-            contatoFinal: {
-              titulo: 'Pronto para cuidar da sua saúde com atenção e tranquilidade?',
-              subtitulo:
-                'Envie seus dados abaixo para consultar os próximos horários disponíveis pelo WhatsApp.'
-            }
+          {
+            numero: 100,
+            sufixo: '%',
+            label: 'Atendimento personalizado',
+            contexto: 'Planejado para a sua necessidade'
           }
+        ],
+
+        servicos: [
+          {
+            categoria: 'Categoria 1',
+            nome: 'Serviço 1',
+            descricao:
+              'Atendimento inicial dedicado para entender a sua demanda, alinhar expectativas e definir um plano prático.',
+            preco: 'Sob orçamento',
+            placeholderTexto: 'Sua imagem aqui'
+          },
+          {
+            categoria: 'Categoria 2',
+            nome: 'Serviço 2',
+            descricao:
+              'Execução completa com método claro, atenção aos detalhes e atualizações frequentes durante todo o processo.',
+            preco: 'R$ 350',
+            placeholderTexto: 'Sua imagem aqui'
+          },
+          {
+            categoria: 'Categoria 3',
+            nome: 'Serviço 3',
+            descricao:
+              'Acompanhamento contínuo e revisões programadas para manter o desempenho e consolidar resultados duradouros.',
+            preco: 'R$ 580',
+            placeholderTexto: 'Sua imagem aqui'
+          }
+        ],
+
+        antesDepois: {
+          sobretitulo: 'Comparativo Visual',
+          titulo: 'Evolução clara em cada etapa do trabalho',
+          subtitulo:
+            'Arraste a barra para comparar o ponto de partida com o resultado alcançado após um atendimento estruturado.',
+          labelAntes: 'Imagem antes',
+          labelDepois: 'Imagem depois',
+          legendaEsquerda: 'Ponto de partida',
+          legendaDireita: 'Após o atendimento',
+          ctaTexto: 'Quero agendar meu atendimento',
+          pontos: [
+            {
+              titulo: 'Mais organização e clareza',
+              texto: 'Cada etapa é conduzida com objetivos definidos desde o início.'
+            },
+            {
+              titulo: 'Resultados consistentes',
+              texto: 'Acompanhamento próximo para garantir qualidade na entrega final.'
+            }
+          ]
+        },
+
+        galeria: [
+          {
+            titulo: 'Projeto ou atendimento 1',
+            legenda: 'Espaço para mostrar detalhes de uma entrega realizada',
+            placeholderTexto: 'Sua imagem aqui'
+          },
+          {
+            titulo: 'Projeto ou atendimento 2',
+            legenda: 'Espaço para apresentar o processo e os cuidados aplicados',
+            placeholderTexto: 'Sua imagem aqui'
+          },
+          {
+            titulo: 'Projeto ou atendimento 3',
+            legenda: 'Espaço para destacar resultados e acabamentos do trabalho',
+            placeholderTexto: 'Sua imagem aqui'
+          }
+        ],
+
+        sobre: {
+          titulo: 'Compromisso com clareza, técnica e atenção real a cada cliente.',
+          paragrafos: [
+            'Cada atendimento começa ouvindo com atenção o que você precisa resolver. A partir disso, estruturamos um plano direto, sem complicações desnecessárias.',
+            'Trabalhamos com horários organizados e comunicação transparente para que você saiba exatamente o que esperar em cada etapa.',
+            'O foco é construir entregas confiáveis, respeitando o seu tempo e buscando sempre o melhor resultado possível.'
+          ],
+          diferenciais: [
+            {
+              titulo: 'Atendimento direto',
+              texto: 'Contato próximo do início à conclusão do serviço.'
+            },
+            {
+              titulo: 'Comunicação clara',
+              texto: 'Explicações diretas sobre prazos, etapas e valores.'
+            },
+            {
+              titulo: 'Pontualidade',
+              texto: 'Horários planejados para evitar esperas desnecessárias.'
+            },
+            {
+              titulo: 'Acompanhamento',
+              texto: 'Suporte contínuo após a entrega para esclarecer dúvidas.'
+            }
+          ],
+          placeholderTexto: 'Sua foto aqui'
+        },
+
+        etapas: [
+          {
+            numero: '01',
+            titulo: 'Contato inicial',
+            descricao: 'Você envia uma mensagem pelo WhatsApp contando brevemente o que procura.'
+          },
+          {
+            numero: '02',
+            titulo: 'Alinhamento',
+            descricao: 'Entendemos a sua necessidade e definimos o formato ideal de atendimento.'
+          },
+          {
+            numero: '03',
+            titulo: 'Execução',
+            descricao: 'Realização do serviço com técnica, organização e atenção aos detalhes.'
+          },
+          {
+            numero: '04',
+            titulo: 'Acompanhamento',
+            descricao: 'Entrega final e suporte pós-atendimento para garantir sua satisfação.'
+          }
+        ],
+
+        depoimentos: [
+          {
+            texto:
+              'Atendimento muito organizado desde a primeira mensagem. Tudo foi explicado com clareza e entregue dentro do combinado.',
+            autor: 'Cliente satisfeito',
+            contexto: 'Serviço 1'
+          },
+          {
+            texto:
+              'Pontualidade, atenção aos detalhes e acompanhamento próximo durante todo o atendimento. Recomendo sem hesitar.',
+            autor: 'Cliente recorrente',
+            contexto: 'Serviço 2'
+          },
+          {
+            texto:
+              'Experiência tranquila e profissional do início ao fim. O resultado superou as expectativas.',
+            autor: 'Cliente atendido',
+            contexto: 'Serviço 3'
+          }
+        ],
+
+        faq: [
+          {
+            pergunta: 'Como funciona o primeiro atendimento?',
+            resposta:
+              'Conversamos para entender exatamente o que você precisa, avaliamos os detalhes da sua demanda e indicamos a melhor solução.'
+          },
+          {
+            pergunta: 'Preciso agendar horário com antecedência?',
+            resposta:
+              'Sim. Trabalhamos com agendamento prévio para garantir atenção exclusiva e pontualidade em cada horário.'
+          },
+          {
+            pergunta: 'O atendimento pode ser presencial ou à distância?',
+            resposta:
+              'Sim, adaptamos o formato conforme a sua necessidade e o tipo de serviço escolhido.'
+          },
+          {
+            pergunta: 'Como são informados os prazos e valores?',
+            resposta:
+              'Todas as condições, prazos e valores são apresentados de forma clara antes do início de qualquer serviço.'
+          },
+          {
+            pergunta: 'Como faço para agendar ou tirar uma dúvida?',
+            resposta:
+              'Basta clicar no botão de WhatsApp ou preencher o formulário abaixo com seus dados e sua solicitação.'
+          }
+        ],
+
+        contatoFinal: {
+          titulo: 'Pronto para agendar seu atendimento com clareza e tranquilidade?',
+          subtitulo:
+            'Preencha os dados ao lado ou fale diretamente pelo WhatsApp para verificar os próximos horários disponíveis.'
         }
       };
 
       /* =====================================================================
-         MOTOR DE RENDERIZAÇÃO (Lê CONFIG.ACTIVE_PRESET ou ?preset=)
+         MOTOR DE RENDERIZAÇÃO (Lê diretamente o objeto CONFIG acima)
          ===================================================================== */
       (function initSite() {
         const $ = (selector) => document.querySelector(selector);
@@ -3230,19 +2404,24 @@
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#39;');
 
-        // Somente troca de preset via CONFIG.ACTIVE_PRESET ou ?preset=nome
-        const params = new URLSearchParams(window.location.search);
-        const urlPreset = (params.get('preset') || '').trim().toLowerCase();
+        const imageIconSVG = `
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <circle cx="8.5" cy="8.5" r="1.5" />
+            <polyline points="21 15 16 10 5 21" />
+          </svg>
+        `;
 
-        const presetKey = CONFIG.PRESETS[urlPreset]
-          ? urlPreset
-          : CONFIG.PRESETS[CONFIG.ACTIVE_PRESET]
-            ? CONFIG.ACTIVE_PRESET
-            : 'clinica';
+        const createPlaceholderHTML = (label) => `
+          <div class="media-placeholder" role="img" aria-label="${escapeHTML(label)}">
+            <span class="media-placeholder-icon" aria-hidden="true">
+              ${imageIconSVG}
+            </span>
+            <span class="media-placeholder-label">${escapeHTML(label)}</span>
+          </div>
+        `;
 
-        const PRESET = CONFIG.PRESETS[presetKey];
         const marcaAtiva = CONFIG.marca || 'Sua Marca';
-
         const whatsappAtivo = String(CONFIG.contato.whatsapp || '').replace(/\D/g, '');
         const whatsappExibicaoAtivo = CONFIG.contato.whatsappExibicao || '(00) 00000-0000';
         const emailAtivo = CONFIG.contato.email || 'contato@seudominio.com';
@@ -3250,11 +2429,9 @@
         const instaUser = instaHandle.replace(/^@/, '');
         const instagramUrlAtivo = `https://instagram.com/${instaUser}`;
 
-        // 1. Aplicar tema (modo claro/escuro, paleta e fonte) do preset
-        const tema = PRESET.tema;
-        const isLight = tema.modo === 'claro';
+        // 1. Aplicar paleta de cores e tipografia do CONFIG
+        const tema = CONFIG.tema;
         const root = document.documentElement;
-
         root.style.setProperty('--bg-primary', tema.corPrincipal);
         root.style.setProperty('--bg-surface', tema.corSuperficie);
         root.style.setProperty('--bg-card', tema.corCard);
@@ -3264,40 +2441,7 @@
         root.style.setProperty('--accent-soft', `color-mix(in srgb, ${tema.corDestaque} 12%, transparent)`);
         root.style.setProperty('--font-display', tema.fonteTitulo);
 
-        if (isLight) {
-          root.style.setProperty('--text-primary', '#121C24');
-          root.style.setProperty('--text-secondary', '#475569');
-          root.style.setProperty('--text-muted', '#64748B');
-          root.style.setProperty('--border-subtle', 'rgba(15, 23, 42, 0.09)');
-          root.style.setProperty('--border-strong', 'rgba(15, 23, 42, 0.18)');
-          root.style.setProperty('--input-bg', '#FFFFFF');
-          root.style.setProperty('--error-bg', 'rgba(200, 45, 45, 0.09)');
-          root.style.setProperty('--error-border', 'rgba(200, 45, 45, 0.35)');
-          root.style.setProperty('--error-text', '#9B1C1C');
-          root.style.setProperty('--shadow-sm', '0 4px 14px rgba(15, 23, 42, 0.05)');
-          root.style.setProperty('--shadow-md', '0 14px 36px rgba(15, 23, 42, 0.09)');
-        } else {
-          root.style.setProperty('--text-primary', '#F4F7FA');
-          root.style.setProperty('--text-secondary', '#B9C2CC');
-          root.style.setProperty('--text-muted', '#8B96A3');
-          root.style.setProperty('--border-subtle', 'rgba(244, 247, 250, 0.1)');
-          root.style.setProperty('--border-strong', 'rgba(244, 247, 250, 0.2)');
-          root.style.setProperty('--input-bg', tema.corPrincipal);
-          root.style.setProperty('--error-bg', 'rgba(239, 68, 68, 0.15)');
-          root.style.setProperty('--error-border', 'rgba(239, 68, 68, 0.4)');
-          root.style.setProperty('--error-text', '#FECACA');
-          root.style.setProperty('--shadow-sm', '0 6px 18px rgba(0, 0, 0, 0.28)');
-          root.style.setProperty('--shadow-md', '0 18px 40px rgba(0, 0, 0, 0.42)');
-        }
-
-        // Destaque discreto opcional para kickers (ex: dourado no preset advogado)
-        if (tema.corAcentoKicker) {
-          $$('.kicker').forEach((el) => {
-            el.style.color = tema.corAcentoKicker;
-          });
-        }
-
-        const faviconEl = document.querySelector('link[rel="icon"]');
+        const faviconEl = $('#site-favicon');
         if (faviconEl) {
           const bgHex = encodeURIComponent(tema.corDestaque);
           const strokeHex = encodeURIComponent(tema.corDestaqueTexto || '#FFFFFF');
@@ -3305,17 +2449,17 @@
         }
 
         const buildWhatsAppUrl = (message) => {
-          const text = encodeURIComponent(message || PRESET.whatsappMensagemPadrao);
+          const text = encodeURIComponent(message || CONFIG.whatsappMensagemPadrao);
           return whatsappAtivo
             ? `https://wa.me/${whatsappAtivo}?text=${text}`
             : `https://wa.me/?text=${text}`;
         };
 
-        const defaultWaUrl = buildWhatsAppUrl(PRESET.whatsappMensagemPadrao);
+        const defaultWaUrl = buildWhatsAppUrl(CONFIG.whatsappMensagemPadrao);
 
         // 2. SEO & Schema.org
-        const pageTitle = `${marcaAtiva} | ${PRESET.profissao}`;
-        const pageDescription = PRESET.hero.subtitulo;
+        const pageTitle = `${marcaAtiva} | ${CONFIG.profissao}`;
+        const pageDescription = CONFIG.hero.subtitulo;
         document.title = pageTitle;
 
         const metaDesc = document.querySelector('meta[name="description"]');
@@ -3337,7 +2481,7 @@
           jsonLdEl.textContent = JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'ProfessionalService',
-            name: `${marcaAtiva} — ${PRESET.profissao}`,
+            name: `${marcaAtiva} — ${CONFIG.profissao}`,
             description: pageDescription,
             email: emailAtivo
           });
@@ -3362,44 +2506,25 @@
 
         $('#floating-whatsapp').href = defaultWaUrl;
 
-        // 4. Hero em Duas Colunas + Faixa de Confiança
-        $('#hero-kicker').textContent = PRESET.hero.sobretitulo;
-        $('#hero-title').textContent = PRESET.hero.titulo;
-        $('#hero-subtitle').textContent = PRESET.hero.subtitulo;
-        $('#hero-fallback-title').textContent = PRESET.profissao;
+        // 4. Hero em Duas Colunas (com placeholder elegante)
+        $('#hero-kicker').textContent = CONFIG.hero.sobretitulo;
+        $('#hero-title').textContent = CONFIG.hero.titulo;
+        $('#hero-subtitle').textContent = CONFIG.hero.subtitulo;
 
         const heroWaBtn = $('#hero-cta-whatsapp');
-        heroWaBtn.textContent = PRESET.hero.ctaWhatsapp;
+        heroWaBtn.textContent = CONFIG.hero.ctaWhatsapp;
         heroWaBtn.href = defaultWaUrl;
 
         const heroSecondaryBtn = $('#hero-cta-secondary');
-        heroSecondaryBtn.textContent = PRESET.hero.ctaSecundario;
+        heroSecondaryBtn.textContent = CONFIG.hero.ctaSecundario;
 
-        const heroImg = $('#hero-image');
-        heroImg.src = PRESET.hero.imagem;
-        heroImg.alt = PRESET.hero.imagemAlt;
+        $('#hero-placeholder-slot').innerHTML = createPlaceholderHTML(
+          CONFIG.hero.placeholderTexto || 'Sua foto aqui'
+        );
 
-        const trustStrip = $('#trust-strip');
-        const trustItems = PRESET.hero.faixaConfianca || [];
-        if (trustItems.length === 0) {
-          trustStrip.style.display = 'none';
-        } else {
-          trustStrip.innerHTML = trustItems
-            .map(
-              (item, index) => `
-              ${index > 0 ? '<span class="trust-sep" aria-hidden="true">·</span>' : ''}
-              <span class="trust-item">
-                <strong>${escapeHTML(item.destaque)}</strong>
-                <span>${escapeHTML(item.texto)}</span>
-              </span>
-            `
-            )
-            .join('');
-        }
-
-        // 5. Números de Credibilidade
+        // 5. Números de Credibilidade (Faixa única de cards)
         const metricsGrid = $('#metrics-grid');
-        const credibilidade = PRESET.credibilidade || [];
+        const credibilidade = Array.isArray(CONFIG.credibilidade) ? CONFIG.credibilidade : [];
         if (credibilidade.length === 0) {
           $('#credibilidade-section').style.display = 'none';
         } else {
@@ -3420,7 +2545,7 @@
 
         // 6. Serviços (3 ou 6 cards sem card solitário)
         const servicesSection = $('#servicos');
-        const servicos = Array.isArray(PRESET.servicos) ? PRESET.servicos : [];
+        const servicos = Array.isArray(CONFIG.servicos) ? CONFIG.servicos : [];
         if (servicos.length === 0) {
           servicesSection.style.display = 'none';
           $$('a[href="#servicos"]').forEach((l) => {
@@ -3442,16 +2567,7 @@
               return `
                 <article class="service-card reveal">
                   <div class="service-media">
-                    <img
-                      src="${escapeHTML(srv.imagem)}"
-                      alt="${escapeHTML(srv.nome)}"
-                      loading="lazy"
-                      referrerpolicy="no-referrer"
-                      onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');"
-                    />
-                    <div class="image-fallback" aria-hidden="true">
-                      <span style="font-size: 0.9375rem; font-weight: 600">${escapeHTML(srv.nome)}</span>
-                    </div>
+                    ${createPlaceholderHTML(srv.placeholderTexto || 'Sua imagem aqui')}
                   </div>
                   <div class="service-body">
                     ${srv.categoria ? `<div class="service-category">${escapeHTML(srv.categoria)}</div>` : ''}
@@ -3476,9 +2592,9 @@
             .join('');
         }
 
-        // 7. Antes e Depois (Opcional por preset)
+        // 7. Antes e Depois (Slider interativo com os dois placeholders)
         const baSection = $('#antes-depois');
-        const ba = PRESET.antesDepois;
+        const ba = CONFIG.antesDepois;
         if (!ba) {
           baSection.style.display = 'none';
           $$('a[href="#antes-depois"]').forEach((l) => {
@@ -3492,10 +2608,10 @@
           $('#ba-kicker').textContent = ba.sobretitulo;
           $('#ba-title').textContent = ba.titulo;
           $('#ba-subtitle').textContent = ba.subtitulo;
-          $('#ba-img-before').src = ba.imagemAntes;
-          $('#ba-img-after').src = ba.imagemDepois;
-          $('#ba-label-before').textContent = ba.labelAntes;
-          $('#ba-label-after').textContent = ba.labelDepois;
+          $('#ba-slot-label-before').textContent = ba.labelAntes || 'Imagem antes';
+          $('#ba-slot-label-after').textContent = ba.labelDepois || 'Imagem depois';
+          $('#ba-label-before').textContent = ba.legendaEsquerda || ba.labelAntes || 'Imagem antes';
+          $('#ba-label-after').textContent = ba.legendaDireita || ba.labelDepois || 'Imagem depois';
 
           const baCta = $('#ba-cta');
           baCta.textContent = ba.ctaTexto;
@@ -3524,9 +2640,9 @@
           updateSlider(50);
         }
 
-        // 8. Galeria de Trabalhos & Lightbox
+        // 8. Galeria & Lightbox (Placeholders elegantes)
         const galeriaSection = $('#galeria');
-        const galeria = Array.isArray(PRESET.galeria) ? PRESET.galeria : [];
+        const galeria = Array.isArray(CONFIG.galeria) ? CONFIG.galeria : [];
         if (galeria.length === 0) {
           galeriaSection.style.display = 'none';
           $$('a[href="#galeria"]').forEach((l) => {
@@ -3545,19 +2661,10 @@
                 type="button"
                 class="gallery-item reveal"
                 data-gallery-index="${index}"
-                aria-label="Ampliar imagem: ${escapeHTML(item.titulo)}"
+                aria-label="Ampliar: ${escapeHTML(item.titulo)}"
               >
                 <div class="gallery-thumb">
-                  <img
-                    src="${escapeHTML(item.imagem)}"
-                    alt="${escapeHTML(item.titulo)}"
-                    loading="lazy"
-                    referrerpolicy="no-referrer"
-                    onerror="this.style.display='none'; this.nextElementSibling.classList.add('is-visible');"
-                  />
-                  <div class="image-fallback" aria-hidden="true">
-                    <span style="font-size: 0.9rem; font-weight: 600">${escapeHTML(item.titulo)}</span>
-                  </div>
+                  ${createPlaceholderHTML(item.placeholderTexto || 'Sua imagem aqui')}
                   <span class="gallery-zoom-hint" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <polyline points="15 3 21 3 21 9" />
@@ -3577,7 +2684,7 @@
             .join('');
 
           const lightbox = $('#gallery-lightbox');
-          const lbImg = $('#lightbox-img');
+          const lbStage = $('#lightbox-stage');
           const lbTitle = $('#lightbox-title');
           const lbSubtitle = $('#lightbox-subtitle');
           const lbCounter = $('#lightbox-counter');
@@ -3589,8 +2696,7 @@
           const updateLightbox = (idx) => {
             currentIndex = (idx + galeria.length) % galeria.length;
             const item = galeria[currentIndex];
-            lbImg.src = item.imagem;
-            lbImg.alt = item.titulo;
+            lbStage.innerHTML = createPlaceholderHTML(item.placeholderTexto || 'Sua imagem aqui');
             lbTitle.textContent = item.titulo;
             lbSubtitle.textContent = item.legenda || '';
             lbCounter.textContent = `${currentIndex + 1} / ${galeria.length}`;
@@ -3632,16 +2738,15 @@
         }
 
         // 9. Sobre o Profissional
-        const aboutImg = $('#about-image');
-        aboutImg.src = PRESET.sobre.imagem;
-        aboutImg.alt = PRESET.sobre.imagemAlt;
-        $('#about-fallback-profession').textContent = PRESET.profissao;
+        $('#about-placeholder-slot').innerHTML = createPlaceholderHTML(
+          CONFIG.sobre.placeholderTexto || 'Sua foto aqui'
+        );
         $('#about-kicker').textContent = R.secoes.sobre.sobretitulo;
-        $('#about-title').textContent = PRESET.sobre.titulo;
-        $('#about-prose').innerHTML = (PRESET.sobre.paragrafos || [])
+        $('#about-title').textContent = CONFIG.sobre.titulo;
+        $('#about-prose').innerHTML = (CONFIG.sobre.paragrafos || [])
           .map((p) => `<p>${escapeHTML(p)}</p>`)
           .join('');
-        $('#about-differentials').innerHTML = (PRESET.sobre.diferenciais || [])
+        $('#about-differentials').innerHTML = (CONFIG.sobre.diferenciais || [])
           .map(
             (dif) => `
             <div>
@@ -3656,7 +2761,7 @@
         $('#steps-kicker').textContent = R.secoes.atendimento.sobretitulo;
         $('#steps-title').textContent = R.secoes.atendimento.titulo;
         $('#steps-subtitle').textContent = R.secoes.atendimento.subtitulo;
-        $('#steps-grid').innerHTML = (PRESET.etapas || [])
+        $('#steps-grid').innerHTML = (CONFIG.etapas || [])
           .map(
             (step) => `
             <article class="step-card reveal">
@@ -3672,7 +2777,7 @@
         $('#testimonials-kicker').textContent = R.secoes.depoimentos.sobretitulo;
         $('#testimonials-title').textContent = R.secoes.depoimentos.titulo;
         $('#testimonials-subtitle').textContent = R.secoes.depoimentos.subtitulo;
-        $('#testimonials-grid').innerHTML = (PRESET.depoimentos || [])
+        $('#testimonials-grid').innerHTML = (CONFIG.depoimentos || [])
           .map(
             (dep) => `
             <article class="testimonial-card reveal">
@@ -3691,7 +2796,7 @@
         $('#faq-title').textContent = R.secoes.faq.titulo;
         $('#faq-subtitle').textContent = R.secoes.faq.subtitulo;
         const faqList = $('#faq-list');
-        faqList.innerHTML = (PRESET.faq || [])
+        faqList.innerHTML = (CONFIG.faq || [])
           .map(
             (item, idx) => `
             <div class="faq-item">
@@ -3742,13 +2847,17 @@
           }
         });
 
-        // 13. Chamada Final & Formulário WhatsApp
+        // 13. Chamada Final, Localização Genérica & Formulário WhatsApp
         $('#contact-kicker').textContent = R.secoes.contato.sobretitulo;
-        $('#contact-title').textContent = PRESET.contatoFinal.titulo;
-        $('#contact-subtitle').textContent = PRESET.contatoFinal.subtitulo;
+        $('#contact-title').textContent = CONFIG.contatoFinal.titulo;
+        $('#contact-subtitle').textContent = CONFIG.contatoFinal.subtitulo;
         $('#contact-label-whatsapp').textContent = R.secoes.contato.labelWhatsapp;
         $('#contact-label-email').textContent = R.secoes.contato.labelEmail;
         $('#contact-label-instagram').textContent = R.secoes.contato.labelInstagram;
+        $('#contact-label-schedule').textContent = CONFIG.contato.horariosTitulo;
+        $('#contact-schedule-text').textContent = CONFIG.contato.horariosTexto;
+        $('#contact-label-location').textContent = CONFIG.contato.localizacaoTitulo;
+        $('#contact-location-text').textContent = CONFIG.contato.localizacaoTexto;
 
         const contactWaLink = $('#contact-whatsapp-link');
         contactWaLink.textContent = whatsappExibicaoAtivo;
@@ -3853,7 +2962,7 @@
         footerEmail.href = `mailto:${emailAtivo}`;
 
         $('#footer-rights').textContent = `© ${currentYear} ${marcaAtiva}. Todos os direitos reservados.`;
-        $('#footer-profession').textContent = PRESET.profissao;
+        $('#footer-profession').textContent = CONFIG.profissao;
 
         // 15. Header Fixo e Drawer Mobile
         const header = $('#site-header');
