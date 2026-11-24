@@ -1,1 +1,104 @@
 @import "tailwindcss";
+
+/* ============================================================================
+   PALETA & VARIÁVEIS DO SITE (Troque toda a identidade visual em um só lugar)
+   ============================================================================ */
+:root {
+  --color-bg: #fafaf8;
+  --color-surface: #f2f1ec;
+  --color-surface-card: #ffffff;
+  --color-placeholder: #eae9e3;
+  --color-placeholder-border: #d5d4cc;
+  --color-text: #1f2328;
+  --color-text-secondary: #4e5660;
+  --color-text-muted: #656e78;
+  --color-border: #e3e2db;
+  --color-border-strong: #cfcec4;
+  --color-accent: #111315;
+  --color-accent-hover: #2b2f36;
+  --color-accent-soft: #eaeae6;
+  --color-accent-ink: #ffffff;
+  --shadow-card: 0 4px 20px rgba(17, 19, 21, 0.05);
+  --shadow-card-hover: 0 12px 30px rgba(17, 19, 21, 0.08);
+  --radius-card: 16px;
+  --radius-control: 10px;
+  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    overflow-x: hidden;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+  text-wrap: balance;
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cards consistentes em toda a página */
+.surface-card {
+  background-color: var(--color-surface-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 220ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.surface-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-card-hover);
+  border-color: var(--color-border-strong);
+}
+
+/* Animação sutil ao rolar a página */
+.reveal-block {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 520ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-block.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .reveal-block {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .surface-card {
+    transition: none;
+  }
+}
